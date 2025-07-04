@@ -1,21 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-:root{
-    --bg-dark: oklch(0.1 0.035 264);
-    --bg: oklch(0.15 0.035 264);
-    --bg-light: oklch(0.2 0.035 264);
-    --text: oklch(0.96 0.07 264);
-    --text-muted: oklch(0.76 0.07 264);
-    --highlight: oklch(0.5 0.07 264);
-    --border: oklch(0.4 0.07 264);
-    --border-muted: oklch(0.3 0.07 264);
-    --primary: oklch(0.76 0.1 264);
-    --secondary: oklch(0.76 0.1 84);
-    --danger: oklch(0.7 0.07 30);
-    --warning: oklch(0.7 0.07 100);
-    --success: oklch(0.7 0.07 160);
-    --info: oklch(0.7 0.07 260);
+:root {
+    /* your roles */
+    --bg:         oklch(25%   0       0deg);   /* #333333  */
+    --text:       oklch(98%   0.005   0deg);   /* #F4F4F4  */
+    --primary:    oklch(95%   0.06   200deg);  /* #C3EFFF  */
+    --highlight:  oklch(95%   0.11   287deg);  /* #D9C1FF  */
+    --border:     oklch(40%   0.005   0deg);
 }
+
 
 * {
     margin: 0;
@@ -27,11 +21,14 @@ body {
     background-color: var(--bg);
 }
 
-/* Navbar section */
-
-header {
-
+p,
+a,
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
 }
+
+/* Navbar section */
 
 .navbar{
     display: flex;
@@ -40,30 +37,80 @@ header {
 }
 
 .navbar__profile-image {
-    width: 3em;
-    height: 3em;
-}
-
-.navbar__profile-name {
-    font-family: 'Montserrat', sans-serif;
+    width: 2em;
+    height: 2em;
+    padding: 20px 0;
+    border-radius: 10%;
 }
 
 .navbar__links {
     display: flex;
     justify-content: space-around;
-    width: 30%;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    padding: 0 1rem;
+    background: linear-gradient(to top, var(--bg), var(--bg));
 }
 
 .navbar__links ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
-    width: 50%;
+    justify-content: space-between;
+}
+
+.navbar__links li {
+    padding: 0.35rem 2rem;
 }
 
 .navbar__links a {
     text-decoration: none;
     color: var(--text);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-family: 'JetBrains Mono Thin', sans-serif;
+    font-size: 14px;
+    padding: 0 0.5rem;
+}
+
+.navbar__link--active {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+}
+
+.navbar__link--active span {
+    color: var(--primary);
+}
+
+.navbar__link--active svg {
+    margin-right: 0.5rem;
+    color: var(--primary);
+}
+
+
+/* Hero Section */
+
+/* IMPORTANT: FOR NOW, FOCUS ON HEADER */
+
+.hero {
+    display: none; /* FOR NOW. Display: flex as default */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10%;
+}
+
+.hero__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10%;
+}
+
+.hero__image {
+    width: 50%;
+    height: 50%;
+}
+
+.hero__text-container h1 {
+        font-family: 'JetBrains Mono', sans-serif;
+    font-size: 20px;
 }
