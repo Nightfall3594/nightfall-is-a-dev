@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 2em;
     height: 2em;
     padding: 20px 0;
-    border-radius: 10%;
+    border-radius: 35%;
 }
 
 .navbar__links {
@@ -71,6 +71,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar__link--active {
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar__link--active a {
     display: inline-flex;
     align-items: center;
     color: var(--primary);
