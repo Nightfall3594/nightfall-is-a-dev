@@ -44,54 +44,64 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar__links {
-    display: flex;
-    justify-content: space-around;
-    border: 1px solid var(--border);
-    border-radius: 25px;
-    padding: 0 1rem;
-    background: linear-gradient(to top, var(--bg), var(--bg));
+    display: none;
 }
 
-.navbar__links ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}
+@media (min-width: 768px) {
+    .navbar__links {
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid var(--border);
+        border-radius: 25px;
+        padding: 0 1rem;
+        background-image: linear-gradient(to top, oklch(30% 0.005 0deg), var(--bg));
+    }
 
-.navbar__links li {
-    padding: 0.35rem 0.75rem;
-}
+    .navbar__links ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
 
-.navbar__links a {
-    text-decoration: none;
-    color: var(--text);
-    font-family: 'JetBrains Mono Thin', sans-serif;
-    font-size: 14px;
-}
+    .navbar__links li {
+        padding: 0.35rem 0.75rem;
+    }
 
-.navbar__link--active {
-    display: inline-flex;
-    align-items: center;
-}
+    .navbar__links li:hover {
+        background-image: radial-gradient(circle, var(--primary), transparent);
+    }
 
-.navbar__link--active a {
-    display: inline-flex;
-    align-items: center;
-    color: var(--primary);
-}
+    .navbar__links a {
+        text-decoration: none;
+        color: var(--text);
+        font-family: 'JetBrains Mono Thin', sans-serif;
+        font-size: 14px;
+    }
 
-.navbar__link--active span {
-    color: var(--primary);
-}
+    .navbar__link--active {
+        display: inline-flex;
+        align-items: center;
+        border-bottom: 1px solid transparent;
+        border-image: linear-gradient(to right, transparent 0%, var(--primary) 40%, var(--primary) 60%, transparent) 1;
+    }
 
-.navbar__link--active svg {
-    margin-right: 0.5rem;
-    color: var(--primary);
-}
+    .navbar__link--active a {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary);
+    }
 
+    .navbar__link--active span {
+        color: var(--primary);
+    }
+
+    .navbar__link--active svg {
+        margin-right: 0.5rem;
+        color: var(--primary);
+    }
+}
 
 /* Hero Section */
-
 /* IMPORTANT: FOR NOW, FOCUS ON HEADER */
 
 .hero {
