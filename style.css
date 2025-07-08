@@ -2,9 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
-    /* your roles */
+
     --bg:         oklch(25%   0       0deg);   /* #333333  */
+    --lighter-bg: oklch(35%   0       0deg);   /* slightly lighter */
     --text:       oklch(98%   0.005   0deg);   /* #F4F4F4  */
+    --muted-text: oklch(90%   0.005   0deg);   /* Slightly darker */
     --primary:    oklch(95%   0.06   200deg);  /* #C3EFFF  */
     --highlight:  oklch(95%   0.11   287deg);  /* #D9C1FF  */
     --border:     oklch(40%   0.005   0deg);
@@ -56,6 +58,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 100;
 }
 
+/* Subtle handle bar icon */
 .navbar__links ul::before{
     content: '';
     background-color: white;
@@ -64,6 +67,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 20px;
     height: 2px;
     border: 2px solid var(--border);
+    align-self: center;
+    justify-content: center;
 }
 
 .navbar__links {
@@ -76,25 +81,35 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     background-color: var(--bg);
-    padding: 2rem 0;
+    padding: 1.25rem 0 2rem 0;
     z-index: 101;
 }
 
 .navbar__links ul {
     list-style: none;
+    width: 100%;
+}
+
+.navbar__links li {
+    width: 100%;
 }
 
 .navbar__links a {
     width: 100%;
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 0.5rem;
-    text-align: center;
+    padding: 1rem 0;
+}
+
+.navbar__links a:hover {
+    background-color: var(--lighter-bg);
 }
 
 .navbar__links svg {
-    display: inline-flex;
+    display: block;
+    text-align: center;
 }
 
 .navbar__links span {
@@ -128,6 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Desktop styles */
 @media (min-width: 768px) {
 
+    /* Resetting mobile styles */
     .navbar__links ul::before {
         display: none;
     }
@@ -144,15 +160,20 @@ h1, h2, h3, h4, h5, h6 {
         text-align: left;
     }
 
-    .hamburger-menu {
-        display: none;
+    .navbar__links a:hover{
+        background-color: transparent;
     }
 
     .overlay {
         display: none;
     }
 
+    .hamburger-menu {
+        display: none;
+    }
+
     .navbar__links {
+        /* Style reset */
         position: static;
         left: auto;
         bottom: auto;
@@ -160,6 +181,7 @@ h1, h2, h3, h4, h5, h6 {
         margin: initial;
         background-color: initial;
 
+        /* Actual desktop styles */
         display: flex;
         justify-content: space-around;
         border: 1px solid var(--border);
