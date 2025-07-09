@@ -49,6 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .overlay{
     content: '';
+    display: none;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -77,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     width: 100%;
     margin: 0 auto;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: var(--bg);
