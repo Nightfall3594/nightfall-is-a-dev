@@ -6,7 +6,7 @@
     --bg:         oklch(25%   0       0deg);   /* #333333  */
     --lighter-bg: oklch(35%   0       0deg);   /* slightly lighter */
     --text:       oklch(98%   0.005   0deg);   /* #F4F4F4  */
-    --muted-text: oklch(90%   0.005   0deg);   /* Slightly darker */
+    --muted-text: oklch(85%   0.005   0deg);   /* Slightly darker */
     --primary:    oklch(95%   0.06   200deg);  /* #C3EFFF  */
     --highlight:  oklch(95%   0.11   287deg);  /* #D9C1FF  */
     --border:     oklch(40%   0.005   0deg);
@@ -238,11 +238,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Hero Section */
-/* IMPORTANT: FOR NOW, FOCUS ON HEADER */
 
 .hero {
-    display: none; /* FOR NOW. Display: flex as default */
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     padding: 10%;
@@ -250,17 +249,94 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero__container{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     padding: 10%;
 }
 
 .hero__image {
-    width: 50%;
-    height: 50%;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    margin: 1.5rem;
 }
 
-.hero__text-container h1 {
-        font-family: 'JetBrains Mono', sans-serif;
-    font-size: 20px;
+.hero__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    /*border: 1px solid white;*/
+}
+
+.hero__text-container p {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+    padding: 0.5rem 0;
+}
+
+.hero__text-container span {
+    font-size: 25px;
+    text-wrap: nowrap;
+    font-family: "JetBrains Mono", sans-serif;
+}
+
+.hero__text-container .hero__text--muted {
+    color: var(--muted-text);
+    font-size: 14px;
+}
+
+/* Hero icon styles */
+.hero__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.hero__links a {
+    text-decoration: none;
+}
+
+.hero__icon{
+    width: 1.15rem;
+    height: 1.15rem;
+    color: var(--text);
+    padding: 0.5rem;
+    border-radius: 100%;
+    margin: 0.5rem 2rem 1.5rem;
+}
+
+.mail-icon {
+    background: #e6603c;
+}
+
+.discord-icon {
+    background: #5865F2;
+}
+
+.github-icon {
+    background: #040505;
+}
+
+
+/* Subtle scroll subsection */
+
+.subtle-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.subtle-scroll__icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--text);
 }
