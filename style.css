@@ -142,10 +142,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Desktop styles */
+
 @media (min-width: 768px) {
 
     /* Resetting mobile styles */
-
     .navbar__links {
         display: flex;
     }
@@ -246,8 +246,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-around;
     padding: 10%;
 }
@@ -255,16 +254,15 @@ h1, h2, h3, h4, h5, h6 {
 .hero__container{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
     padding: 10%;
 }
 
 .hero__image {
-    width: 15rem;
-    height: 15rem;
+    width: 14rem;
+    height: 14rem;
     border-radius: 50%;
-    margin: 1.5rem;
 }
 
 .hero__text-container {
@@ -272,13 +270,11 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-
-    /*border: 1px solid white;*/
 }
 
 .hero__text-container p {
     text-align: center;
+    text-wrap: nowrap;
     font-family: Montserrat, sans-serif;
     font-size: 30px;
     padding: 0.5rem 0;
@@ -344,4 +340,64 @@ h1, h2, h3, h4, h5, h6 {
     width: 2rem;
     height: 2rem;
     color: var(--text);
+}
+
+/* Desktop styles (Hero) */
+
+@media (min-width: 768px) {
+
+    .hero {
+        height: 100dvh;
+        margin-top: -72px; /* Adjusted to account for navbar height */
+        padding: 10dvh 10% 0;
+    }
+
+    .hero__container{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        /*margin: 5vh 3rem 15vh;*/
+    }
+
+    .hero__image {
+        margin: 0;
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .hero__text-container {
+        display: block;
+    }
+
+    .hero__text-container p {
+        text-align: left;
+        font-size: 36px;
+    }
+
+    .hero__text-container span {
+        font-size: 28px;
+    }
+
+    .hero__text--muted {
+        font-size: 28px;
+    }
+
+    .hero__links {
+        display: block;
+        text-align: left;
+        justify-content: space-around;
+    }
+
+    .hero__icon {
+        margin: 1rem 4rem 0 0.5rem;
+    }
+
+    .subtle-scroll {
+        /*margin-top: auto;*/
+    }
 }
