@@ -411,6 +411,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Timeline Section */
 .timeline {
     display: flex;
+    flex-direction: column;
 }
 
 .timeline-1__container {
@@ -517,4 +518,117 @@ h1, h2, h3, h4, h5, h6 {
 
 .timeline-1__container > hr {
     border: 1px solid var(--border);
+}
+
+
+/* Timeline-2 Subsection */
+.timeline-2__container {
+    display: block;
+    margin: 0 5%;
+    width: 100%;
+}
+
+.timeline-2__container h1 {
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1.5rem 0;
+    color: var(--text);
+}
+
+.timeline-2__container ul {
+    padding-left: 1rem;
+    list-style: none;
+    width: calc(100% - 17px);
+    margin: 0 0 0 0;
+}
+
+.timeline-2__container li {
+    padding: 0.5rem 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Timeline line style */
+.timeline-2__container li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -14px;
+    background-color: var(--primary);
+    height: calc(100% + 2px);
+    width: 2px;
+}
+
+/* Timeline dot style */
+.timeline-2__container li::after {
+    content: "";
+    position: absolute;
+    top: 40%; /* Adjusted to center the dot */
+    bottom: 60%; /* Adjusted to center the dot */
+    left: -17px;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+/* Timeline first item style */
+.timeline-2__container li:first-child::before {
+    top: calc(50%);
+    height: calc(50% + 2px);
+}
+
+/* Timeline last item style */
+.timeline-2__container li:last-child::before {
+    bottom: calc(50%);
+    height: 50%;
+}
+
+/* Timeline style for single items */
+.timeline-2__container li:only-child::before {
+    display: none;
+}
+
+.timeline-2__icon {
+    width: 0.75em;
+    height: 0.75em;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    padding: 0.25rem;
+    margin-right: 0.5rem;
+    background-color: var(--lighter-bg);
+}
+
+.timeline-2__container li {
+    display: flex;
+    align-items: center;
+}
+
+.timeline-2__container span{
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-right: 0.5rem;
+}
+
+.timeline-2__article > span > a,
+.timeline-2__project > span > a,
+.timeline-2__like > span > a{
+    font-size: 16px;
+}
+
+.timeline-2__thoughts span {
+    font-size: 15px;
+    padding: 0.75rem;
+    background-color: var(--lighter-bg);
+    border-radius: 0 14px 14px 14px
+}
+
+.timeline-2__thoughts img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
 }
