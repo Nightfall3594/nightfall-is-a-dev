@@ -632,3 +632,35 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0.5rem;
     border-radius: 50%;
 }
+
+/* Timeline Desktop styles */
+@media (min-width: 768px) {
+
+    .timeline {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .timeline-1__container,
+    .timeline-2__container{
+        width: 40%;
+        padding: 0 1rem;
+    }
+
+    .timeline-2__container ul {
+        height: 400px;
+        overflow-y: auto;
+
+        /* Browser-specific scrollbar styles */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .timeline-2__container ul::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+
+    }
+
+}
