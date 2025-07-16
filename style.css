@@ -411,12 +411,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Timeline Section */
 .timeline {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    margin: 0 5%;
 }
 
 .timeline-1__container {
     display: block;
-    margin: 0 5%;
     width: 100%;
 }
 
@@ -524,7 +525,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Timeline-2 Subsection */
 .timeline-2__container {
     display: block;
-    margin: 0 5%;
     width: 100%;
 }
 
