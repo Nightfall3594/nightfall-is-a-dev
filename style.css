@@ -416,33 +416,22 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 5%;
 }
 
-.timeline-1__container {
-    display: block;
-    width: 100%;
-}
-
-.timeline__title {
-    font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
-    margin: 1.5rem 0;
-    color: var(--text);
-}
-
-.timeline-1__container ul {
+/* Overall styles of the actual timelines */
+.timeline {
     padding-left: 1rem;
     list-style: none;
     width: calc(100% - 17px);
     margin: 0 0 0 0;
 }
 
-.timeline-1__container li {
+.timeline li {
     padding: 0.5rem 0;
     position: relative;
     width: 100%;
 }
 
 /* Timeline line style */
-.timeline-1__container li::before {
+.timeline li::before {
     content: "";
     position: absolute;
     top: 0;
@@ -454,7 +443,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Timeline dot style */
-.timeline-1__container li::after {
+.timeline li::after {
     content: "";
     position: absolute;
     top: 40%; /* Adjusted to center the dot */
@@ -467,23 +456,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Timeline first item style */
-.timeline-1__container li:first-child::before {
+.timeline li:first-child::before {
     top: calc(50%);
     height: calc(50% + 2px);
 }
 
 /* Timeline last item style */
-.timeline-1__container li:last-child::before {
+.timeline li:last-child::before {
     bottom: calc(50%);
     height: 50%;
 }
 
 /* Timeline style for single items */
-.timeline-1__container li:only-child::before {
+.timeline li:only-child::before {
     display: none;
 }
 
-.timeline-1__container li > a {
+.timeline li > a {
     text-decoration: none;
     width: 100%;
     color: var(--text);
@@ -491,6 +480,21 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: space-between;
 }
+
+/* Timeline-1 Subsection */
+.timeline-1__container {
+    display: block;
+    width: 100%;
+}
+
+.timeline__title {
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1.5rem 0;
+    color: var(--text);
+}
+
+
 
 .timeline__date {
     color: var(--muted-text);
@@ -528,63 +532,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-
-
-.timeline-2__container ul {
-    padding-left: 1rem;
-    list-style: none;
-    width: calc(100% - 17px);
-    margin: 0 0 0 0;
-}
-
-.timeline-2__container li {
-    padding: 0.5rem 0;
-    position: relative;
-    width: 100%;
-}
-
-/* Timeline line style */
-.timeline-2__container li::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -14px;
-    background-color: var(--primary);
-    height: calc(100% + 2px);
-    width: 2px;
-}
-
-/* Timeline dot style */
-.timeline-2__container li::after {
-    content: "";
-    position: absolute;
-    top: 40%; /* Adjusted to center the dot */
-    bottom: 60%; /* Adjusted to center the dot */
-    left: -17px;
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: var(--primary);
-    border-radius: 50%;
-}
-
-/* Timeline first item style */
-.timeline-2__container li:first-child::before {
-    top: calc(50%);
-    height: calc(50% + 2px);
-}
-
-/* Timeline last item style */
-.timeline-2__container li:last-child::before {
-    bottom: calc(50%);
-    height: 50%;
-}
-
-/* Timeline style for single items */
-.timeline-2__container li:only-child::before {
-    display: none;
-}
-
 .timeline-2__icon {
     width: 0.75em;
     height: 0.75em;
@@ -596,7 +543,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--lighter-bg);
 }
 
-.timeline-2__container li {
+.timeline-2__timeline li {
     display: flex;
     align-items: center;
 }
