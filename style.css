@@ -409,7 +409,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Timeline Section */
-.timeline {
+.timelines {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -497,7 +497,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 12px;
 }
 
-.timeline__see-more {
+.timeline-1__see-more {
     text-decoration: none;
     display: flex;
     width: 100%;
@@ -506,12 +506,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1.5rem 0 2rem;
 }
 
-.timeline__see-more svg {
+.timeline-1__see-more svg {
     width: 1em;
     height: 1em;
 }
 
-.timeline__see-more span {
+.timeline-1__see-more span {
     margin-left: 0.5rem;
     font-size: 15px;
     color: var(--muted-text);
@@ -636,7 +636,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Timeline Desktop styles */
 @media (min-width: 768px) {
 
-    .timeline {
+    .timelines {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-around;
