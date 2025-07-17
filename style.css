@@ -421,7 +421,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-.timeline-1__container h1 {
+.timeline__title {
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     margin: 1.5rem 0;
@@ -528,12 +528,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-.timeline-2__container h1 {
-    font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
-    margin: 1.5rem 0;
-    color: var(--text);
-}
+
 
 .timeline-2__container ul {
     padding-left: 1rem;
