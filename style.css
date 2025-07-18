@@ -542,6 +542,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.25rem;
     margin-right: 0.5rem;
     background-color: var(--lighter-bg);
+
+    flex-shrink: 0;
 }
 
 .timeline-2__timeline li {
