@@ -575,6 +575,21 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
 }
 
+.timeline-2__timeline {
+    height: 400px;
+    overflow-y: auto;
+
+    /* Browser-specific scrollbar styles */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.timeline-2__timeline::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+
+}
+
 /* Timeline Desktop styles */
 @media (min-width: 768px) {
 
@@ -588,21 +603,6 @@ h1, h2, h3, h4, h5, h6 {
     .timeline-2__container{
         width: 40%;
         padding: 0 1rem;
-    }
-
-    .timeline-2__container ul {
-        height: 400px;
-        overflow-y: auto;
-
-        /* Browser-specific scrollbar styles */
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .timeline-2__container ul::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-
     }
 
 }
