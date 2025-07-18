@@ -433,6 +433,15 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 3px;
 }
 
+.timeline li > a {
+    text-decoration: none;
+    width: 100%;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* Timeline line style */
 .timeline li::before {
     content: "";
@@ -449,13 +458,20 @@ h1, h2, h3, h4, h5, h6 {
 .timeline li::after {
     content: "";
     position: absolute;
-    top: 40%; /* Adjusted to center the dot */
-    bottom: 60%; /* Adjusted to center the dot */
+    top: 50%; /* Adjusted to center the dot */
+    bottom: 50%; /* Adjusted to center the dot */
     left: -17px;
     width: 0.5rem;
     height: 0.5rem;
     background-color: var(--primary);
     border-radius: 50%;
+
+    /*
+    Top aligns the top to the center of the container box.
+    Since the top is at exact center, The "true" center is about halfway of the element down from the intended center.
+    So, translateY moves it up halfway relative to it's size, to align the true center to the intended center.
+    */
+    transform: translateY(-50%);
 }
 
 /* Timeline first item style */
@@ -473,15 +489,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Timeline style for single items */
 .timeline li:only-child::before {
     display: none;
-}
-
-.timeline li > a {
-    text-decoration: none;
-    width: 100%;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 /* Timeline-1 Subsection */
