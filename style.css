@@ -428,6 +428,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem 0;
     position: relative;
     width: 100%;
+
+    /* Allowance to avoid timeline dot clipping */
+    margin-left: 3px;
 }
 
 /* Timeline line style */
@@ -554,7 +557,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Timeline-2 item styles */
-
 .timeline-2__item {}
 
 .timeline-2__item a {
@@ -581,6 +583,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
 }
 
+/* Timeline-2 scroll styles */
 .timeline-2__timeline {
     height: 400px;
     overflow-y: auto;
