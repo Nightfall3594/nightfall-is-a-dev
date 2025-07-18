@@ -494,8 +494,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text);
 }
 
-
-
 .timeline__date {
     color: var(--muted-text);
     font-size: 12px;
@@ -555,11 +553,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0.5rem;
 }
 
-.timeline-2__article > span > a,
-.timeline-2__project > span > a,
-.timeline-2__like > span > a{
+/* Timeline-2 item styles */
+
+.timeline-2__item {}
+
+.timeline-2__item a {
     font-size: 16px;
 }
+
+/* Empty for now, but when specific styles are needed, they can be added here */
+.timeline-2__like {}
+.timeline-2__project {}
+.timeline-2__article {}
+.timeline-2__thoughts {}
 
 .timeline-2__thoughts span {
     font-size: 15px;
@@ -587,7 +593,6 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-2__timeline::-webkit-scrollbar {
     width: 0;
     height: 0;
-
 }
 
 /* Timeline Desktop styles */
