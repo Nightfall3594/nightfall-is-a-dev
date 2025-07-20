@@ -560,7 +560,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.timeline-2__container span{
+.timeline-2-item__content{
     color: var(--text);
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -579,8 +579,10 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-2__project {}
 .timeline-2__article {}
 .timeline-2__thoughts {}
+.timeline-2__comment {}
 
-.timeline-2__thoughts span {
+.timeline-2__thoughts .timeline-2-item__content,
+.timeline-2__comment .timeline-2-item__content{
     font-size: 15px;
     padding: 0.75rem;
     background-color: var(--lighter-bg);
@@ -592,6 +594,18 @@ h1, h2, h3, h4, h5, h6 {
     height: 1.25rem;
     margin-right: 0.5rem;
     border-radius: 50%;
+}
+
+.timeline-2-comment__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-2-comment__info{
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
+    color: var(--muted-text);
+    margin: 0.25rem 0;
 }
 
 /* Timeline-2 scroll styles */
