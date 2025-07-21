@@ -883,10 +883,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__container-2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    align-items: center;
-    justify-content: flex-start;
 }
 
 .footer__copyright,
@@ -900,19 +898,27 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.footer__quote:before {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 1rem;
-    margin: auto 0.75rem;
-    background-color: var(--muted-text);
-}
-
 .footer__credits {
     width: 100%;
 }
 
 .footer__credits a {
     text-decoration: none;
+}
+
+@media (min-width: 768px) {
+
+    .footer__container-2 {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .footer__quote:before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 1rem;
+        margin: auto 0.75rem;
+        background-color: var(--muted-text);
+    }
 }
