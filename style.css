@@ -403,11 +403,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Utility classes */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .visible {
-    display: block;
+    display: block !important;
 }
 
 /* Timeline Section */
@@ -721,6 +721,107 @@ h1, h2, h3, h4, h5, h6 {
 
 .bottom-nav__comment {
     background-color: var(--comment-color);
+}
+
+/* Bottom Nav Leave a message subsection */
+.bottom-nav__leave-message {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    justify-content: center;
+    padding: 2rem;
+    width: 70%;
+    border-radius: 25px;
+
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+
+    z-index: 102;
+
+    max-width: 500px;
+
+    box-shadow: 0 0 10px 0 var(--border);
+
+    /*background-color: var(--lighter-bg);*/
+    background-color: rgba(20, 20, 30, 0.2);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid var(--border);
+}
+
+.bottom-nav-title__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+
+}
+
+.bottom-nav-message__title {
+    font-size: 20px;
+}
+
+.bottom-nav-close__icon {
+    color: var(--text);
+}
+
+.bottom-nav__leave-message hr {
+    border-top: 1px solid var(--border);
+}
+
+.bottom-nav-message__close {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.bottom-nav-message__pretext {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--muted-text);
+    margin: 0.5rem 0;
+}
+
+.bottom-nav__leave-message form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.bottom-nav__leave-message textarea {
+    width: calc(100% - 2rem);
+    height: 200px;
+    background-color: var(--lighter-bg);
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+}
+
+.bottom-nav-message__send {
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: var(--bg);
+    margin-top: 1rem;
+}
+
+.bottom-nav__overlay{
+    content: '';
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
 }
 
 @media (min-width: 768px) {

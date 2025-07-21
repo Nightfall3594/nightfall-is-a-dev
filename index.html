@@ -11,8 +11,10 @@
 
 <body>
 
-    <!-- Global overlay for the hamburger menu -->
+    <!-- Global overlays -->
     <div class="overlay"></div>
+
+    <div class="bottom-nav__overlay"></div>
 
     <!-- Header Section -->
     <header class="navbar">
@@ -403,6 +405,32 @@
                 </svg>
                 <span>Leave a message</span>
             </button>
+
+        </div>
+
+
+        <div class="bottom-nav__leave-message hidden">
+            <div class="bottom-nav-title__container">
+                <h1 class="bottom-nav-message__title">Leave a message!</h1>
+                <button class="bottom-nav-message__close">
+                    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' class="bottom-nav-close__icon">
+                        <title>close_fill</title>
+                        <g id='close_fill' fill='none' fill-rule='evenodd'>
+                            <path d='M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z'/>
+                            <path fill='currentColor' d='m12 14.122 5.303 5.303a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879 6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.304a1.5 1.5 0 1 0 2.122 2.12z'/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+
+            <hr/>
+
+            <p class="bottom-nav-message__pretext">Let me know your thoughts!</p>
+
+            <form action="#" method="post">
+                <textarea name="comment" id="comment" placeholder="What do you think?"></textarea>
+                <button type="submit" class="bottom-nav-message__send">Send</button>
+            </form>
         </div>
     </section>
 </body>
