@@ -1,21 +1,21 @@
 
 // Navbar Event Listeners
-const overlay = document.querySelector('.overlay');
+const navbarOverlay = document.querySelector('.navbar__overlay');
 const hamburgerIcon = document.querySelector('.hamburger-menu');
 const mobileNavLinks = document.querySelector('.navbar__links');
 
 hamburgerIcon.addEventListener('click', () => {
-    overlay.classList.add('visible');
+    navbarOverlay.classList.add('visible');
     mobileNavLinks.classList.add('visible');
 })
 
-overlay.addEventListener('click', () => {
-    overlay.classList.remove('visible');
+navbarOverlay.addEventListener('click', () => {
+    navbarOverlay.classList.remove('visible');
     mobileNavLinks.classList.remove('visible');
 })
 
 mobileNavLinks.addEventListener('click', () => {
-    overlay.classList.remove('visible');
+    navbarOverlay.classList.remove('visible');
     mobileNavLinks.classList.remove('visible');
 })
 
