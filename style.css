@@ -3,12 +3,12 @@
 
 :root {
 
-    --bg: oklch(25% 0 0deg); /* #333333  */
+    --bg: oklch(25% 0 0deg);
     --lighter-bg: oklch(35% 0 0deg); /* slightly lighter */
-    --text: oklch(98% 0.005 0deg); /* #F4F4F4  */
-    --muted-text: oklch(85% 0.005 0deg); /* Slightly darker */
-    --primary: oklch(95% 0.06 200deg); /* #C3EFFF  */
-    --highlight: oklch(95% 0.11 287deg); /* #D9C1FF  */
+    --text: oklch(98% 0.005 0deg);
+    --muted-text: oklch(85% 0.005 0deg);
+    --primary: oklch(95% 0.06 200deg);
+    --highlight: oklch(95% 0.11 287deg);
     --border: oklch(40% 0.005 0deg);
     --like-color: oklch(0.702 0.174 31.754);
     --comment-color: oklch(0.804 0.112 154.773);
@@ -843,3 +843,82 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+
+/* Footer Section */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 5%;
+    background-color: var(--lighter-bg);
+    border-top: 1px solid var(--text);
+    gap: 0.5rem;
+}
+
+.footer__container-1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer__container-1 svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--text);
+}
+
+.footer__contacts {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.footer__contacts a {
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer__container-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer__copyright,
+.footer__quote {
+    font-size: 16px;
+    padding: 0.5rem 0;
+}
+
+.footer__quote {
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer__credits {
+    width: 100%;
+}
+
+.footer__credits a {
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+
+    .footer__container-2 {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .footer__quote:before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 1rem;
+        margin: auto 0.75rem;
+        background-color: var(--muted-text);
+    }
+}
