@@ -217,8 +217,7 @@
 .timeline li::after {
     content: "";
     position: absolute;
-    top: 50%; /* Adjusted to center the dot */
-    bottom: 50%; /* Adjusted to center the dot */
+    top: 50%;
     left: -17px;
     width: 0.5rem;
     height: 0.5rem;
