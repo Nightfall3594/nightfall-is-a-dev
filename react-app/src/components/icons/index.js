@@ -1,0 +1,7 @@
+export {default as Home} from './home.jsx'
+export {default as Hamburger} from './hamburger.jsx'
+export {default as Journal} from './journal.jsx'
+export {default as Other} from './others.jsx'
+export {default as Project} from './projects.jsx'
+export {default as Thought} from './thoughts.jsx'
+export {default as Mail} from './mail.jsx'
