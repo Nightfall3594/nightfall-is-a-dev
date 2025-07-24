@@ -1,0 +1,596 @@
+
+/* Hero Section */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10%;
+}
+
+.hero__container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+}
+
+.hero__image {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+}
+
+.hero__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__text-container p {
+    text-align: center;
+    text-wrap: nowrap;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+    padding: 0.5rem 0;
+}
+
+.hero__text-container span {
+    font-size: 25px;
+    text-wrap: nowrap;
+    font-family: "JetBrains Mono", sans-serif;
+}
+
+.hero__text-container .hero__text--muted {
+    color: var(--muted-text);
+    font-size: 14px;
+}
+
+/* Hero icon styles */
+.hero__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.hero__links a {
+    text-decoration: none;
+}
+
+.hero__icon{
+    width: 1.15rem;
+    height: 1.15rem;
+    color: var(--text);
+    padding: 0.5rem;
+    border-radius: 100%;
+    margin: 0.5rem 2rem 1.5rem;
+}
+
+.mail-icon {
+    background: #e6603c;
+}
+
+.discord-icon {
+    background: #5865F2;
+}
+
+.github-icon {
+    background: #040505;
+}
+
+
+/* Subtle scroll subsection */
+
+.subtle-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.subtle-scroll__icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--text);
+}
+
+/* Desktop styles (Hero) */
+
+@media (min-width: 768px) {
+
+    .hero {
+        height: 100dvh;
+        margin-top: -72px; /* Adjusted to account for navbar height */
+        padding: 10dvh 10% 0;
+    }
+
+    .hero__container{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .hero__image {
+        margin: 0;
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .hero__text-container {
+        display: block;
+    }
+
+    .hero__text-container p {
+        text-align: left;
+        font-size: 36px;
+    }
+
+    .hero__text-container span {
+        font-size: 28px;
+    }
+
+    .hero__text--muted {
+        font-size: 28px;
+    }
+
+    .hero__links {
+        display: block;
+        text-align: left;
+        justify-content: space-around;
+    }
+
+    .hero__icon {
+        margin: 1rem 4rem 0 0.5rem;
+    }
+
+    .subtle-scroll {
+    }
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/* Timeline Section */
+.timelines {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 5% 10% 5%;
+}
+
+/* Overall styles of the actual timelines */
+.timeline {
+    padding-left: 1rem;
+    list-style: none;
+    width: calc(100% - 17px);
+    margin: 0 0 0 0;
+}
+
+.timeline li {
+    padding: 0.5rem 0;
+    position: relative;
+    width: 100%;
+
+    /* Allowance to avoid timeline dot clipping */
+    margin-left: 3px;
+}
+
+.timeline li > a {
+    text-decoration: none;
+    width: 100%;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Timeline line style */
+.timeline li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -14px;
+    background-color: var(--primary);
+    height: calc(100% + 2px);
+    width: 2px;
+}
+
+/* Timeline dot style */
+.timeline li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -17px;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+/* Timeline first item style */
+.timeline li:first-child::before {
+    top: calc(50%);
+    height: calc(50% + 2px);
+}
+
+/* Timeline last item style */
+.timeline li:last-child::before {
+    bottom: calc(50%);
+    height: 50%;
+}
+
+/* Timeline style for single items */
+.timeline li:only-child::before {
+    display: none;
+}
+
+/* Timeline-1 Subsection */
+.timeline-1__container {
+    display: block;
+    width: 100%;
+}
+
+.timeline__title {
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1.5rem 0;
+    color: var(--text);
+}
+
+.timeline__date {
+    color: var(--muted-text);
+    font-size: 12px;
+}
+
+.timeline-1__see-more {
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1.5rem 0 2rem;
+}
+
+.timeline-1__see-more svg {
+    width: 1em;
+    height: 1em;
+}
+
+.timeline-1__see-more span {
+    margin-left: 0.5rem;
+    font-size: 15px;
+    color: var(--muted-text);
+}
+
+.timeline-1__container > hr {
+    border: 1px solid var(--border);
+}
+
+
+/* Timeline-2 Subsection */
+.timeline-2__container {
+    display: block;
+    width: 100%;
+}
+
+.timeline-2__icon {
+    width: 0.75em;
+    height: 0.75em;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    padding: 0.25rem;
+    margin-right: 0.5rem;
+    background-color: var(--lighter-bg);
+
+    flex-shrink: 0;
+}
+
+.timeline-2__timeline li {
+    display: flex;
+    align-items: center;
+}
+
+.timeline-2-item__content{
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-right: 0.5rem;
+}
+
+/* Timeline-2 item styles */
+.timeline-2__item {}
+
+.timeline-2__item a {
+    font-size: 16px;
+}
+
+/* Empty for now, but when specific styles are needed, they can be added here */
+.timeline-2__like {}
+.timeline-2__project {}
+.timeline-2__article {}
+.timeline-2__thoughts {}
+.timeline-2__comment {}
+
+.timeline-2__thoughts .timeline-2-item__content,
+.timeline-2__comment .timeline-2-item__content{
+    font-size: 15px;
+    padding: 0.75rem;
+    background-color: var(--lighter-bg);
+    border-radius: 0 14px 14px 14px
+}
+
+.timeline-2__thoughts img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+
+.timeline-2-comment__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-2-comment__info{
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
+    color: var(--muted-text);
+    margin: 0.25rem 0;
+}
+
+/* Timeline-2 scroll styles */
+.timeline-2__timeline {
+    height: 400px;
+    overflow-y: auto;
+
+    /* Browser-specific scrollbar styles */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.timeline-2__timeline::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Timeline Desktop styles */
+@media (min-width: 768px) {
+
+    .timelines {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .timeline-1__container,
+    .timeline-2__container{
+        width: 40%;
+        padding: 0 1rem;
+    }
+
+}
+
+/* Bottom Nav Section */
+.bottom-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-nav__title {
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    margin: 3rem 0;
+}
+
+.bottom-nav__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.bottom-nav__list li {
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 1rem 0;;
+}
+
+.bottom-nav__list svg{
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.bottom-nav__list li a {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+
+/* bottom-nav button styles */
+.bottom-nav__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+.bottom-nav__button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-nav__button svg {
+    width: 1rem;
+    height: 1rem;
+    color: var(--bg);
+    margin-right: 6px;
+}
+
+.bottom-nav__button span {
+    color: var(--bg);
+    font-size: 14px;
+}
+
+.bottom-nav__like {
+    background-color: var(--like-color);
+}
+
+.bottom-nav__comment {
+    background-color: var(--comment-color);
+}
+
+/* Bottom Nav Leave a message subsection */
+.bottom-nav__leave-message {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    justify-content: center;
+    padding: 2rem;
+    width: 70%;
+    border-radius: 25px;
+
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+
+    z-index: 102;
+
+    max-width: 500px;
+
+    box-shadow: 0 0 10px 0 var(--border);
+
+    /*background-color: var(--lighter-bg);*/
+    background-color: rgba(20, 20, 30, 0.2);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid var(--border);
+}
+
+.bottom-nav-title__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+
+}
+
+.bottom-nav-message__title {
+    font-size: 20px;
+}
+
+.bottom-nav-close__icon {
+    color: var(--text);
+}
+
+.bottom-nav__leave-message hr {
+    border-top: 1px solid var(--border);
+}
+
+.bottom-nav-message__close {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.bottom-nav-message__pretext {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--muted-text);
+    margin: 0.5rem 0;
+}
+
+.bottom-nav__leave-message form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.bottom-nav__leave-message textarea {
+    width: calc(100% - 2rem);
+    height: 200px;
+    background-color: var(--lighter-bg);
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+}
+
+.bottom-nav-message__send {
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: var(--bg);
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .bottom-nav__list {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .bottom-nav__list li {
+        padding: 0.5rem 0 0.5rem 0.5rem;
+        width: auto;
+    }
+
+    .bottom-nav__list li a::before {
+        content: '';
+        display: inline-block;
+        width: 0.25rem;
+        height: 0.25rem;
+        background: var(--muted-text);
+        border-radius: 50%;
+        margin: 0 1rem;
+    }
+
+    .bottom-nav__list li:first-child a::before {
+        display: none;
+    }
+
+    .bottom-nav__list a span {
+        font-size: 14px;
+    }
+}
+
+
