@@ -6,6 +6,7 @@ import './css/navbar.css'
 
 import Navbar from "./components/Navbar/navbar.jsx";
 import Hero from "./components/hero/Hero.jsx";
+import Timelines from "./components/timelines/timelines.jsx"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <>
         <Navbar />
         <Hero />
+        <Timelines />
     </>
   )
 }
