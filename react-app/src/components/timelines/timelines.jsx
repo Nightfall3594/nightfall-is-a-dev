@@ -2,6 +2,8 @@ import DateItem from './date-item.jsx'
 import * as Icons from "../icons/index.js";
 import Timeline from "./timeline.jsx";
 
+import * as Items from './index.js'
+
 function Timelines({className=""}) {
 
     return(
@@ -56,109 +58,38 @@ function Timelines({className=""}) {
                 <div className="timeline-2__container">
                     <h1 className="timeline__title">Recent Updates</h1>
                     <ul className="timeline timeline-2__timeline">
-                        <li className="timeline-2__item timeline-2__like">
 
-                            <Icons.Heart className="timeline-2__icon"/>
+                        <Items.LikeItem to="#" articleName="Article Name here!"/>
 
-                            <span className="timeline-2-item__content">
-                                Liked the article <a>Article Name here!</a>
-                            </span>
-                        </li>
-                        <li className="timeline-2__item timeline-2__thoughts">
+                        <Items.ThoughtItem>
+                            Have you ever wondered what happens when you sleep?
+                        </Items.ThoughtItem>
 
-                            <Icons.Thought className="timeline-2__icon"/>
+                        <Items.ArticleItem to="#" articleName="Article Name here!"/>
 
-                            <img src="../assets/images/pfp.jpg" alt="Nightfall3594"/>
-                            <span className="timeline-2-item__content">
-                        Have you ever wondered what happens when you sleep?
-                    </span>
-                        </li>
-                        <li className="timeline-2__item timeline-2__article">
+                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
 
-                            <Icons.Journal className="timeline-2__icon"/>
+                        {/* Some Filler to test for scrollability */}
+                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
+                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
+                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
+                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
+                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
+                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
 
-                            <span className="timeline-2-item__content">
-                                Wrote <a>Article Name here!</a>
-                            </span>
-                        </li>
-                        <li className="timeline-2__item timeline-2__project">
+                        <Items.ThoughtItem>
+                            Have you ever wondered what happens when you sleep?
+                        </Items.ThoughtItem>
 
-                            <Icons.Project className="timeline-2__icon"/>
+                        {/* For testing multi-line thoughts */}
+                        <Items.ThoughtItem>
+                            Have you ever wondered what happens when you sleep?<br/><br/><br/><br/><br/><br/><br/>
+                            Sometimes, truthfully, I don't know what I'm doing.
+                        </Items.ThoughtItem>
 
-                            <span className="timeline-2-item__content">
-                                Added a new project <a>Project Name here!</a>
-                            </span>
-                        </li>
-
-
-                        <li className="timeline-2__item timeline-2__project">
-
-                            <Icons.Project className="timeline-2__icon"/>
-
-                            <span className="timeline-2-item__content">
-                        This is filler for scroll:  <a>Project Name here!</a>
-                    </span>
-                        </li>
-                        <li className="timeline-2__item timeline-2__project">
-
-                            <Icons.Project className="timeline-2__icon"/>
-
-                            <span className="timeline-2-item__content">
-                        This is filler for scroll:  <a>Project Name here!</a>
-                    </span>
-                        </li>
-
-                        <li className="timeline-2__item timeline-2__project">
-
-                            <Icons.Project className="timeline-2__icon"/>
-
-                            <span className="timeline-2-item__content">
-                        This is filler for scroll:  <a>Project Name here!</a>
-                    </span>
-                        </li>
-
-                        <li className="timeline-2__item timeline-2__project">
-
-                            <Icons.Project className="timeline-2__icon"/>
-
-                            <span className="timeline-2-item__content">
-                        This is filler for scroll:  <a>Project Name here!</a>
-                    </span>
-                        </li>
-                        <li className="timeline-2__item timeline-2__thoughts">
-
-                            <Icons.Thought className="timeline-2__icon"/>
-
-                            <img src="../assets/images/pfp.jpg" alt="Nightfall3594"/>
-                            <span className="timeline-2-item__content">
-                        Have you ever wondered what happens when you sleep?
-                    </span>
-                        </li>
-
-                        <li className="timeline-2__item timeline-2__thoughts">
-
-                            <Icons.Thought className="timeline-2__icon"/>
-
-                            <img src="../assets/images/pfp.jpg" alt="Nightfall3594"/>
-                            <span className="timeline-2-item__content">
-                        Have you ever wondered what happens when you sleep?<br/><br/><br/><br/><br/><br/><br/>
-                        Sometimes, truthfully, I don't know what I'm doing.
-                    </span>
-                        </li>
-
-                        <li className="timeline-2__item timeline-2__comment">
-
-                            <Icons.Message className="timeline-2__icon"/>
-
-                            <div className="timeline-2-comment__container">
-                                <span className="timeline-2-comment__info">
-                                    Someone commented on your article!
-                                </span>
-                                <span className="timeline-2-item__content">
-                                    This place looks pretty nice, I wonder what it is?
-                                </span>
-                            </div>
-                        </li>
+                        <Items.CommentItem>
+                            This place looks pretty nice, I wonder what it is?
+                        </Items.CommentItem>
 
                     </ul>
                 </div>
