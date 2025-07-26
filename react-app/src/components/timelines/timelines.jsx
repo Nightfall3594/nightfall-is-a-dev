@@ -2,6 +2,7 @@ import DateItem from './date-item.jsx'
 import App from "../../App.jsx";
 
 import {ArrowCircle} from "../icons/index.js";
+import Timeline from "./timeline.jsx";
 
 function Timelines({className=""}) {
 
@@ -9,8 +10,9 @@ function Timelines({className=""}) {
         <>
             <section className="timelines">
                 <div className="timeline-1__container">
-                    <h1 className="timeline__title">Recently Updated Notes</h1>
-                    <ul className="timeline timeline-1">
+
+                    {/* First Timeline of Timeline-1 Section */}
+                    <Timeline className="timeline-1" title="Recently Updated Notes">
                         <DateItem to="#" time="2 hours ago">
                             Sample text for timeline 1
                         </DateItem>
@@ -30,7 +32,8 @@ function Timelines({className=""}) {
                         <DateItem to="#" time="2025 Jan 16">
                             Even more sample text for timeline 1
                         </DateItem>
-                    </ul>
+
+                    </Timeline>
 
                     <a href="#" className="timeline-1__see-more">
                         <ArrowCircle />
@@ -39,13 +42,12 @@ function Timelines({className=""}) {
 
                     <hr/>
 
-                    <h1 className="timeline__title">Recent Project Updates</h1>
-
-                    <ul className="timeline">
+                    {/* Second Timeline of Timeline-1 Section */}
+                    <Timeline className="timeline-1" title="Recently Updated Projects">
                         <DateItem to="#" time="2 hours ago">
                             Sample text for timeline 2
                         </DateItem>
-                    </ul>
+                    </Timeline>
 
                     <a href="#" className="timeline-1__see-more">
                         <ArrowCircle/>
