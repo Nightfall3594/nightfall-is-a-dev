@@ -56,8 +56,7 @@ function Timelines({className=""}) {
                 </div>
 
                 <div className="timeline-2__container">
-                    <h1 className="timeline__title">Recent Updates</h1>
-                    <ul className="timeline timeline-2__timeline">
+                    <Timeline title="Recent Updates" className="timeline-2__timeline">
 
                         <Items.LikeItem to="#" articleName="Article Name here!"/>
 
@@ -91,7 +90,7 @@ function Timelines({className=""}) {
                             This place looks pretty nice, I wonder what it is?
                         </Items.CommentItem>
 
-                    </ul>
+                    </Timeline>
                 </div>
             </section>
         </>
