@@ -1,5 +1,6 @@
 
 import * as Icons from "../icons/index.js";
+import {default as NavLink} from "../Navbar/navlink.jsx"
 
 function BottomNav({className=""}) {
     return (
@@ -8,30 +9,21 @@ function BottomNav({className=""}) {
             <h1 className="bottom-nav__title">Why don't you take a look?</h1>
 
             <ul className="bottom-nav__list">
-                <li>
-                    <a href="#">
-                        <Icons.Journal/>
-                        <span>What I've been writing</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <Icons.Thought/>
-                        <span>What I've been up to</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <Icons.Project/>
-                        <span>What I'm working on</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <Icons.Other/>
-                        <span>About the site</span>
-                    </a>
-                </li>
+                <NavLink to="#" Icon={Icons.Journal}>
+                    What I've been writing
+                </NavLink>
+
+                <NavLink to="#" Icon={Icons.Thought}>
+                    What I've been up to
+                </NavLink>
+
+                <NavLink to="#" Icon={Icons.Project}>
+                    What I'm working on
+                </NavLink>
+
+                <NavLink to="#" Icon={Icons.Other}>
+                    About the site
+                </NavLink>
             </ul>
 
             <div className="bottom-nav__buttons">
@@ -44,11 +36,11 @@ function BottomNav({className=""}) {
                     <Icons.MessageFilled/>
                     <span>Leave a message</span>
                 </button>
-
             </div>
 
 
             <div className="bottom-nav__leave-message hidden">
+
                 <div className="bottom-nav-title__container">
                     <h1 className="bottom-nav-message__title">Leave a message!</h1>
                     <button className="bottom-nav-message__close">
@@ -59,11 +51,11 @@ function BottomNav({className=""}) {
                 <hr/>
 
                 <p className="bottom-nav-message__pretext">Let me know your thoughts!</p>
-
                 <form action="#" method="post">
                     <textarea name="comment" id="comment" placeholder="What do you think?"></textarea>
                     <button type="submit" className="bottom-nav-message__send">Send</button>
                 </form>
+
             </div>
         </section>
     )
