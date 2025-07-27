@@ -7,6 +7,7 @@ import './css/navbar.css'
 import Navbar from "./components/Navbar/navbar.jsx";
 import Hero from "./components/hero/Hero.jsx";
 import Timelines from "./components/timelines/timelines.jsx"
+import BottomNav from "./components/bottom-nav/bottom-nav.jsx"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Navbar />
         <Hero />
         <Timelines />
+        <BottomNav />
     </>
   )
 }
