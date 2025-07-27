@@ -1,6 +1,7 @@
 
 import * as Icons from "../icons/index.js";
 import {default as NavLink} from "../Navbar/navlink.jsx"
+import IconButton from "./icon-button.jsx";
 
 function BottomNav({className=""}) {
     return (
@@ -27,18 +28,17 @@ function BottomNav({className=""}) {
             </ul>
 
             <div className="bottom-nav__buttons">
-                <button className="bottom-nav__button bottom-nav__like">
-                    <Icons.HeartFilled/>
-                    <span>Like this page</span>
-                </button>
+                <IconButton className="bottom-nav__button bottom-nav__like" Icon={Icons.HeartFilled}>
+                    Like this page
+                </IconButton>
 
-                <button className="bottom-nav__button bottom-nav__comment">
-                    <Icons.MessageFilled/>
-                    <span>Leave a message</span>
-                </button>
+                <IconButton className="bottom-nav__button bottom-nav__comment" Icon={Icons.MessageFilled}>
+                    Leave a message
+                </IconButton>
             </div>
 
-
+            {/* TODO: Migrate to <CommentBox className=> */}
+            {/* This is just a one and done component, so it's not a problem, just for abstraction's sake. */}
             <div className="bottom-nav__leave-message hidden">
 
                 <div className="bottom-nav-title__container">
