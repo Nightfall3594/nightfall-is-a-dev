@@ -2,6 +2,7 @@
 import * as Icons from "../icons/index.js";
 import {default as NavLink} from "../Navbar/navlink.jsx"
 import IconButton from "./icon-button.jsx";
+import CommentBox from "./comment-box.jsx"
 
 function BottomNav({className=""}) {
     return (
@@ -37,26 +38,7 @@ function BottomNav({className=""}) {
                 </IconButton>
             </div>
 
-            {/* TODO: Migrate to <CommentBox className=> */}
-            {/* This is just a one and done component, so it's not a problem, just for abstraction's sake. */}
-            <div className="bottom-nav__leave-message hidden">
-
-                <div className="bottom-nav-title__container">
-                    <h1 className="bottom-nav-message__title">Leave a message!</h1>
-                    <button className="bottom-nav-message__close">
-                        <Icons.CloseIcon className={"bottom-nav-close__icon"}/>
-                    </button>
-                </div>
-
-                <hr/>
-
-                <p className="bottom-nav-message__pretext">Let me know your thoughts!</p>
-                <form action="#" method="post">
-                    <textarea name="comment" id="comment" placeholder="What do you think?"></textarea>
-                    <button type="submit" className="bottom-nav-message__send">Send</button>
-                </form>
-
-            </div>
+            <CommentBox/>
         </section>
     )
 }
