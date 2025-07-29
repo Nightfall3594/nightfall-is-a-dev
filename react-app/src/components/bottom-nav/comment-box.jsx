@@ -1,12 +1,16 @@
 import {CloseIcon} from "../icons/index.js";
 
-function CommentBox({className=""}){
-    return (
-        <div className={"bottom-nav__leave-message hidden " + className}>
+function CommentBox({isVisible, onClose}){
 
+    if(!isVisible){
+        return null;
+    }
+
+    return (
+        <div className="bottom-nav__leave-message ">
             <div className="bottom-nav-title__container">
                 <h1 className="bottom-nav-message__title">Leave a message!</h1>
-                <button className="bottom-nav-message__close">
+                <button className="bottom-nav-message__close" onClick={onClose}>
                     <CloseIcon className="bottom-nav-close__icon"/>
                 </button>
             </div>

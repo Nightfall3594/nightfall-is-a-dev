@@ -493,6 +493,10 @@
     border: 1px solid var(--border);
 }
 
+/*.bottom-nav__leave-message--visible {*/
+/*    display: flex !important;*/
+/*}*/
+
 .bottom-nav-title__container {
     display: flex;
     align-items: center;
