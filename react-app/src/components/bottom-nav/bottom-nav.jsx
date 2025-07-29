@@ -3,8 +3,13 @@ import * as Icons from "../icons/index.js";
 import {default as NavLink} from "../Navbar/navlink.jsx"
 import IconButton from "./icon-button.jsx";
 import CommentBox from "./comment-box.jsx"
+import {useState} from "react";
+
 
 function BottomNav({className=""}) {
+
+    const [isCommentBoxVisible, setCommentBoxVisible] = useState(false);
+
     return (
         <section className={"bottom-nav " + className}>
 
@@ -33,12 +38,16 @@ function BottomNav({className=""}) {
                     Like this page
                 </IconButton>
 
-                <IconButton className="bottom-nav__button bottom-nav__comment" Icon={Icons.MessageFilled}>
+                <IconButton
+                    className="bottom-nav__button bottom-nav__comment"
+                    Icon={Icons.MessageFilled}
+                    onClick={() =>{setCommentBoxVisible(true)}}
+                >
                     Leave a message
                 </IconButton>
             </div>
 
-            <CommentBox/>
+            <CommentBox isVisible={isCommentBoxVisible} onClose={() => setCommentBoxVisible(false)} />
         </section>
     )
 }

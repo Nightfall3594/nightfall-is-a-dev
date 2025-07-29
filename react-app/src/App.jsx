@@ -4,6 +4,7 @@ import './css/defaults.css'
 import './css/index.css'
 import './css/navbar.css'
 import './css/footer.css'
+import './css/overlay.css'
 
 import Navbar from "./components/Navbar/navbar.jsx";
 import Hero from "./components/hero/Hero.jsx";

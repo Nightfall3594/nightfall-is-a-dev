@@ -1,7 +1,7 @@
 
-function IconButton ({className="", Icon, children}) {
+function IconButton ({className="", Icon, children, onClick}) {
     return (
-        <button className={className}>
+        <button className={className} onClick={onClick || (() => {})}>
             {Icon && <Icon/>}
             <span>{children}</span>
         </button>

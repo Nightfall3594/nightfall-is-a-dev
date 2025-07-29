@@ -46,6 +46,10 @@ It's not recommended to link this file directly in the HTML, and it should be im
     z-index: 101;
 }
 
+.navbar__links--visible {
+    display: flex !important;
+}
+
 .navbar__links ul {
     list-style: none;
     width: 100%;
