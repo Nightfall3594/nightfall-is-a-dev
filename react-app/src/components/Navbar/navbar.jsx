@@ -10,8 +10,8 @@ function HandleClick(){
     const navbarOverlay = document.querySelector('.navbar__overlay');
     const mobileNavLinks = document.querySelector('.navbar__links');
 
-    navbarOverlay.classList.toggle('hidden');
-    mobileNavLinks.classList.toggle('hidden');
+    navbarOverlay.classList.toggle('overlay--visible');
+    mobileNavLinks.classList.toggle('navbar__links--visible');
 }
 
 function NavBar() {
@@ -25,7 +25,7 @@ function NavBar() {
 
                 <img src="/images/pfp.jpg" alt="profile picture" className="navbar__profile-image"/>
 
-                <nav className="navbar__links hidden">
+                <nav className="navbar__links ">
                     <ul>
                         <NavLink className="navbar__link--active" to="/" Icon={Icons.Home}>Home</NavLink>
                         <NavLink to="/" Icon={Icons.Journal}>Journal</NavLink>

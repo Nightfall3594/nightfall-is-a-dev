@@ -158,14 +158,6 @@
     }
 }
 
-/* Utility classes */
-.hidden {
-    display: none !important;
-}
-
-.visible {
-    display: block !important;
-}
 
 /* Timeline Section */
 .timelines {

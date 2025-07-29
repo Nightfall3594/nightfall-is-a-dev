@@ -38,12 +38,16 @@ It's not recommended to link this file directly in the HTML, and it should be im
     bottom: 0;
     width: 100%;
     margin: 0 auto;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: var(--bg);
     padding: 1.25rem 0 2rem 0;
     z-index: 101;
+}
+
+.navbar__links--visible {
+    display: flex !important;
 }
 
 .navbar__links ul {
