@@ -171,8 +171,8 @@
 .timeline {
     padding-left: 1rem;
     list-style: none;
-    width: calc(100% - 17px);
-    margin: 0 0 0 0;
+    width: calc(100% - 17px); /* 17px accounting for the timeline line and dot */
+    margin: 0;
 }
 
 .timeline li {
@@ -297,6 +297,10 @@
     flex-shrink: 0;
 }
 
+.timeline-2__timeline {
+    overflow-x: clip;
+}
+
 .timeline-2__timeline li {
     display: flex;
     align-items: center;
@@ -314,6 +318,7 @@
 
 .timeline-2__item a {
     font-size: 16px;
+    text-decoration: none;
 }
 
 /* Empty for now, but when specific styles are needed, they can be added here */
