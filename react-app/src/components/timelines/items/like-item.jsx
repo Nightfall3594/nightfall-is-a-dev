@@ -1,4 +1,4 @@
-import {Heart} from "../icons/index.js";
+import {Heart} from "../../icons/index.js";
 
 function LikeItem({className="", to, articleName}){
     return (

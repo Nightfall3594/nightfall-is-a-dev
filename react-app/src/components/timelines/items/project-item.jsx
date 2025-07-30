@@ -1,4 +1,4 @@
-import {Project} from "../icons/index.js";
+import {Project} from "../../icons/index.js";
 
 function ProjectItem({className, to, projectName}) {
    return (

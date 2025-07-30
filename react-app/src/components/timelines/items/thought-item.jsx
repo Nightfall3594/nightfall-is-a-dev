@@ -1,4 +1,4 @@
-import {Thought} from "../icons/index.js";
+import {Thought} from "../../icons/index.js";
 
 function ThoughtItem({className="", children}) {
     return (

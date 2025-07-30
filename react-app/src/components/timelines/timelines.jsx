@@ -1,4 +1,4 @@
-import DateItem from './date-item.jsx'
+import DateItem from './items/date-item.jsx'
 import * as Icons from "../icons/index.js";
 import Timeline from "./timeline.jsx";
 

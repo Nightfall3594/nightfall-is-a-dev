@@ -1,4 +1,4 @@
-import {Journal} from "../icons/index.js";
+import {Journal} from "../../icons/index.js";
 
 function ArticleItem({className="", to, articleName}) {
     return (
