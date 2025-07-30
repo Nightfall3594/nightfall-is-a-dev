@@ -318,6 +318,7 @@
 
 .timeline-2__item a {
     font-size: 16px;
+    text-decoration: none;
 }
 
 /* Empty for now, but when specific styles are needed, they can be added here */
