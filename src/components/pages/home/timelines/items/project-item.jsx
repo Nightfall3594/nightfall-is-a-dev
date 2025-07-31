@@ -1,4 +1,5 @@
 import {Project} from "../../../../common/icons/index.js";
+import {Link} from "react-router-dom"
 
 function ProjectItem({className, to, projectName}) {
    return (
@@ -7,7 +8,7 @@ function ProjectItem({className, to, projectName}) {
            <Project className="timeline-2__icon"/>
 
            <span className="timeline-2-item__content">
-               Added a new project: <a href={to}>{projectName}</a>
+               Added a new project: <Link to={to}>{projectName}</Link>
            </span>
        </li>
    )

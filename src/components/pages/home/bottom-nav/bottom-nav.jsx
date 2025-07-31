@@ -1,7 +1,7 @@
 import './bottom-nav.css'
 
 import * as Icons from "../../../common/icons/index.js";
-import {default as NavLink} from "../../../common/navbar/navlink.jsx"
+import {default as BottomNavItem} from "./bottom-nav-item.jsx"
 import IconButton from "./icon-button.jsx";
 import CommentBox from "./comment-box.jsx"
 import {useState} from "react";
@@ -17,21 +17,21 @@ function BottomNav({className=""}) {
             <h1 className="bottom-nav__title">Why don't you take a look?</h1>
 
             <ul className="bottom-nav__list">
-                <NavLink to="#" Icon={Icons.Journal}>
+                <BottomNavItem to="/journal" Icon={Icons.Journal}>
                     What I've been writing
-                </NavLink>
+                </BottomNavItem>
 
-                <NavLink to="#" Icon={Icons.Thought}>
+                <BottomNavItem to="/thoughts" Icon={Icons.Thought}>
                     What I've been up to
-                </NavLink>
+                </BottomNavItem>
 
-                <NavLink to="#" Icon={Icons.Project}>
+                <BottomNavItem to="/projects" Icon={Icons.Project}>
                     What I'm working on
-                </NavLink>
+                </BottomNavItem>
 
-                <NavLink to="#" Icon={Icons.Other}>
+                <BottomNavItem to="/other" Icon={Icons.Other}>
                     About the site
-                </NavLink>
+                </BottomNavItem>
             </ul>
 
             <div className="bottom-nav__buttons">

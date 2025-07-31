@@ -1,4 +1,5 @@
 import {Journal} from "../../../../common/icons/index.js";
+import {Link} from "react-router-dom"
 
 function ArticleItem({className="", to, articleName}) {
     return (
@@ -7,7 +8,7 @@ function ArticleItem({className="", to, articleName}) {
             <Journal className="timeline-2__icon"/>
 
             <span className="timeline-2-item__content">
-                Wrote <a href={to}>{articleName}</a>
+                Wrote <Link to={to}>{articleName}</Link>
             </span>
         </li>
     )

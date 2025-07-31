@@ -1,6 +1,6 @@
 import './navbar.css'
 
-import NavLink from './navlink.jsx'
+import NavItem from './navitem.jsx'
 import NavLinks from "./navlinks.jsx";
 import * as Icons from '../icons/index.js'
 import Overlay from "../overlays/overlay.jsx";
@@ -39,11 +39,11 @@ function NavBar() {
                 <img src="/images/pfp.jpg" alt="profile picture" className="navbar__profile-image"/>
 
                 <NavLinks isVisible={isNavLinkVisible}>
-                    <NavLink className="navbar__link--active" to="/" Icon={Icons.Home}>Home</NavLink>
-                    <NavLink to="/" Icon={Icons.Journal}>Journal</NavLink>
-                    <NavLink to="/" Icon={Icons.Thought}>Thoughts</NavLink>
-                    <NavLink to="/" Icon={Icons.Project}>Projects</NavLink>
-                    <NavLink to="/" Icon={Icons.Other}>Other</NavLink>
+                    <NavItem to="/" Icon={Icons.Home}>Home</NavItem>
+                    <NavItem to="/journal" Icon={Icons.Journal}>Journal</NavItem>
+                    <NavItem to="/thoughts" Icon={Icons.Thought}>Thoughts</NavItem>
+                    <NavItem to="/projects" Icon={Icons.Project}>Projects</NavItem>
+                    <NavItem to="/other" Icon={Icons.Other}>Other</NavItem>
                 </NavLinks>
 
                 <button className="navbar__icon contact-button">
