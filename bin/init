@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# this script is for initializing the helper shell scripts in this folder.
+# that way, they are in $PATH and easily accessible. Activate, and have fun!
+
+DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
+export PATH=$DIR:$PATH
+echo "Activated shell scripts located in $DIR. Have fun!"
