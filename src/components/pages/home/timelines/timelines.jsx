@@ -6,7 +6,7 @@ import Timeline from "./timeline.jsx";
 
 import * as Items from './index.js'
 
-function Timelines({className=""}) {
+function Timelines() {
 
     return(
         <>

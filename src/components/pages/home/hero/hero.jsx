@@ -4,7 +4,7 @@ import {Mail, Discord, Github, SubtleScroll} from "../../../common/icons/index.j
 import HeroLink from "./hero-link.jsx";
 import HeroText from "./hero-text.jsx";
 
-function Hero({className=""}) {
+function Hero() {
     return (
         <section className="hero">
             <div className="hero__container">
