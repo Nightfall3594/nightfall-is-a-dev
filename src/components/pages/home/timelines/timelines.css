@@ -1,0 +1,228 @@
+/* Timeline Section */
+
+.timelines {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 5% 10% 5%;
+}
+
+/* Overall styles of the actual timelines */
+.timeline {
+    padding-left: 1rem;
+    list-style: none;
+    width: calc(100% - 17px); /* 17px accounting for the timeline line and dot */
+    margin: 0;
+}
+
+.timeline li {
+    padding: 0.5rem 0;
+    position: relative;
+    width: 100%;
+
+    /* Allowance to avoid timeline dot clipping */
+    margin-left: 3px;
+}
+
+.timeline li > a {
+    text-decoration: none;
+    width: 100%;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Timeline line style */
+.timeline li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -14px;
+    background-color: var(--primary);
+    height: calc(100% + 2px);
+    width: 2px;
+}
+
+/* Timeline dot style */
+.timeline li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -17px;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+/* Timeline first item style */
+.timeline li:first-child::before {
+    top: calc(50%);
+    height: calc(50% + 2px);
+}
+
+/* Timeline last item style */
+.timeline li:last-child::before {
+    bottom: calc(50%);
+    height: 50%;
+}
+
+/* Timeline style for single items */
+.timeline li:only-child::before {
+    display: none;
+}
+
+/* Timeline-1 Subsection */
+.timeline-1__container {
+    display: block;
+    width: 100%;
+}
+
+.timeline__title {
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1.5rem 0;
+    color: var(--text);
+}
+
+.timeline__date {
+    color: var(--muted-text);
+    font-size: 12px;
+}
+
+.timeline-1__see-more {
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1.5rem 0 2rem;
+}
+
+.timeline-1__see-more svg {
+    width: 1em;
+    height: 1em;
+}
+
+.timeline-1__see-more span {
+    margin-left: 0.5rem;
+    font-size: 15px;
+    color: var(--muted-text);
+}
+
+.timeline-1__container > hr {
+    border: 1px solid var(--border);
+}
+
+
+/* Timeline-2 Subsection */
+.timeline-2__container {
+    display: block;
+    width: 100%;
+}
+
+.timeline-2__icon {
+    width: 0.75em;
+    height: 0.75em;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    padding: 0.25rem;
+    margin-right: 0.5rem;
+    background-color: var(--lighter-bg);
+
+    flex-shrink: 0;
+}
+
+.timeline-2__timeline {
+    overflow-x: clip;
+}
+
+.timeline-2__timeline li {
+    display: flex;
+    align-items: center;
+}
+
+.timeline-2-item__content{
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-right: 0.5rem;
+}
+
+/* Timeline-2 item styles */
+.timeline-2__item {}
+
+.timeline-2__item a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* Empty for now, but when specific styles are needed, they can be added here */
+.timeline-2__like {}
+.timeline-2__project {}
+.timeline-2__article {}
+.timeline-2__thoughts {}
+.timeline-2__comment {}
+
+.timeline-2__thoughts .timeline-2-item__content,
+.timeline-2__comment .timeline-2-item__content{
+    font-size: 15px;
+    padding: 0.75rem;
+    background-color: var(--lighter-bg);
+    border-radius: 0 14px 14px 14px
+}
+
+.timeline-2__thoughts img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+
+.timeline-2-comment__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-2-comment__info{
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
+    color: var(--muted-text);
+    margin: 0.25rem 0;
+}
+
+/* Timeline-2 scroll styles */
+.timeline-2__timeline {
+    height: 400px;
+    overflow-y: auto;
+
+    /* Browser-specific scrollbar styles */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.timeline-2__timeline::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Timeline Desktop styles */
+@media (min-width: 768px) {
+
+    .timelines {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    .timeline-1__container,
+    .timeline-2__container{
+        width: 40%;
+        padding: 0 1rem;
+    }
+
+}

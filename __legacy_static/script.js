@@ -1,5 +1,5 @@
 
-// Navbar Event Listeners
+// navbar Event Listeners
 const navbarOverlay = document.querySelector('.navbar__overlay');
 const hamburgerIcon = document.querySelector('.hamburger-menu');
 const mobileNavLinks = document.querySelector('.navbar__links');

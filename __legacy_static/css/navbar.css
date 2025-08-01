@@ -4,7 +4,7 @@ This file contains the styles for the navbar component, including both mobile an
 It's not recommended to link this file directly in the HTML, and it should be imported into the main CSS instead.
  */
 
-/* Navbar section */
+/* navbar section */
 .navbar{
     display: flex;
     align-items: center;

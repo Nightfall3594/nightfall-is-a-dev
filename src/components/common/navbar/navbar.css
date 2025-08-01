@@ -1,0 +1,207 @@
+
+/*
+This file contains the styles for the navbar component, including both mobile and desktop styles.
+It's not recommended to link this file directly in the HTML, and it should be imported into the main CSS instead.
+ */
+
+/* navbar section */
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar__profile-image {
+    width: 2em;
+    height: 2em;
+    padding: 20px 0;
+    border-radius: 35%;
+}
+
+/* Navlink styles for mobile */
+
+/* Subtle handle bar icon */
+.navbar__links ul::before{
+    content: '';
+    background-color: white;
+    display: flex;
+    margin: 0 auto 2.5rem auto;
+    width: 20px;
+    height: 2px;
+    align-self: center;
+    justify-content: center;
+}
+
+.navbar__links {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    padding: 1.25rem 0 2rem 0;
+    z-index: 101;
+}
+
+.navbar__links--visible {
+    display: flex !important;
+}
+
+.navbar__links ul {
+    list-style: none;
+    width: 100%;
+}
+
+.navbar__links li {
+    width: 100%;
+}
+
+.navbar__links a {
+    width: 100%;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.navbar__links a:hover {
+    background-color: var(--lighter-bg);
+}
+
+.navbar__links svg {
+    display: block;
+    text-align: center;
+}
+
+.navbar__links span {
+    display: block;
+    padding: 0.35rem;
+    text-align: center;
+}
+
+/* Icon styles */
+
+.navbar__icon {
+    background: none;
+    border: none;
+}
+
+.navbar__icon svg {
+    width: 16px;
+    height: 16px;
+    color: var(--text);
+    padding: 0.35rem;
+    border-radius: 100%;
+    border: 1px solid var(--border);
+}
+
+.navbar__icon a {
+    text-decoration: none;
+    color: var(--text);
+    font-family: 'JetBrains Mono Thin', sans-serif;
+}
+
+/* Desktop styles */
+
+@media (min-width: 768px) {
+
+    /* Resetting mobile styles */
+    .navbar__links {
+        display: flex;
+    }
+
+    .navbar__links ul::before {
+        display: none;
+    }
+
+    .navbar__links svg {
+        display: none;
+    }
+
+    .navbar__link--active svg {
+        display: block;
+    }
+
+    .navbar__links span{
+        text-align: left;
+    }
+
+    .navbar__links a:hover{
+        background-color: transparent;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .navbar__links {
+        /* Style reset */
+        position: static;
+        left: auto;
+        bottom: auto;
+        width: auto;
+        margin: initial;
+        background-color: initial;
+
+        /* Actual desktop styles */
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid var(--border);
+        border-radius: 25px;
+        padding: 0 1rem;
+        background-image: linear-gradient(
+                to top,
+                oklch(30% 0.005 0deg),
+                var(--bg)
+        );
+    }
+
+    .navbar__links ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar__links li {
+        padding: 0.35rem 0.75rem;
+    }
+
+    .navbar__links a {
+        font-size: 14px;
+        padding: 0;
+    }
+
+    .navbar__links span {
+        padding: 0;
+    }
+
+    .navbar__link--active {
+        display: inline-flex;
+        align-items: center;
+        border-bottom: 1px solid transparent;
+        border-image: linear-gradient(to right, transparent 0%, var(--primary) 40%, var(--primary) 60%, transparent) 1;
+    }
+
+    .navbar__link--active a {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary);
+    }
+
+    .navbar__link--active span {
+        color: var(--primary);
+    }
+
+    .navbar__link--active svg {
+        margin-right: 0.5rem;
+        color: var(--primary);
+    }
+}
