@@ -1,0 +1,28 @@
+
+on:
+  push:
+    branches:
+      - "**"
+
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.17.0"
+
+      - name: install dependencies
+        run: "npm ci"
+
+      - name: lint
+        run: "npm run lint"
