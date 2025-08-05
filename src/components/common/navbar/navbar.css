@@ -1,9 +1,4 @@
 
-/*
-This file contains the styles for the navbar component, including both mobile and desktop styles.
-It's not recommended to link this file directly in the HTML, and it should be imported into the main CSS instead.
- */
-
 /* navbar section */
 .navbar{
     display: flex;
@@ -57,6 +52,10 @@ It's not recommended to link this file directly in the HTML, and it should be im
 
 .navbar__links li {
     width: 100%;
+}
+
+.navbar__underline {
+    display: none;
 }
 
 .navbar__links a {
@@ -119,11 +118,13 @@ It's not recommended to link this file directly in the HTML, and it should be im
     }
 
     .navbar__links svg {
-        display: none;
+        opacity: 0;
+        position: absolute;
     }
 
     .navbar__link--active svg {
-        display: block;
+        opacity: 1;
+        position: static;
     }
 
     .navbar__links span{
@@ -172,6 +173,17 @@ It's not recommended to link this file directly in the HTML, and it should be im
 
     .navbar__links li {
         padding: 0.35rem 0.75rem;
+        position: relative;
+    }
+
+    .navbar__underline {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-image: linear-gradient(to right, transparent 0%, var(--primary) 40%, var(--primary) 60%, transparent);
     }
 
     .navbar__links a {
@@ -186,8 +198,7 @@ It's not recommended to link this file directly in the HTML, and it should be im
     .navbar__link--active {
         display: inline-flex;
         align-items: center;
-        border-bottom: 1px solid transparent;
-        border-image: linear-gradient(to right, transparent 0%, var(--primary) 40%, var(--primary) 60%, transparent) 1;
+        overflow: visible;
     }
 
     .navbar__link--active a {

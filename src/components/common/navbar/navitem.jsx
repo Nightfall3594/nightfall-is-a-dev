@@ -1,17 +1,35 @@
 import {useMatch, useResolvedPath, Link} from "react-router-dom";
+import {motion} from 'framer-motion'
+import React from "react";
 
-function NavItem({to="#", children, Icon, onClick}) {
+import {NavContext} from "./navcontext.js";
 
-    let fullPath = useResolvedPath(to)
-    let isMatch = useMatch({path: fullPath.pathname})
+function NavItem({to="#", children, Icon}) {
+
+    const fullPath = useResolvedPath(to)
+    const isMatch = useMatch({path: fullPath.pathname})
+
+    const {handleClick, isMobile} = React.useContext(NavContext)
 
     return (
-        <li className={isMatch ? "navbar__link--active" : ""} onClick={onClick}>
+        <motion.li layout className={isMatch ? "navbar__link--active" : ""} onClick={handleClick}>
             <Link to={to}>
-                {Icon && <Icon/>}
+                {(isMatch || isMobile) &&
+                    <motion.div layoutId={"nav__icon--active"}>
+                        {Icon && <Icon/>}
+                    </motion.div>
+                }
+
                 <span>{children}</span>
             </Link>
-        </li>
+
+            {isMatch &&
+                <motion.div className="navbar__underline"
+                            layoutId="navbar__underline"
+                />
+            }
+
+        </motion.li>
     )
 }
 

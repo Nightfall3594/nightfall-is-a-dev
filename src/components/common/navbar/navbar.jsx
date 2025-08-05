@@ -13,6 +13,8 @@ function NavBar() {
     const [isOverlayVisible, setOverlayVisible] = useState(false);
     const [isNavLinkVisible, setNavLinkVisible] = useState(false);
 
+    const [isMobile, setMobile] = useState(window.innerWidth <= 768);
+
     let hideNav = () => {
         setOverlayVisible(false);
         setNavLinkVisible(false);
@@ -23,12 +25,11 @@ function NavBar() {
         setNavLinkVisible(true);
     }
 
-    /* These functions are for responsive behavior on the JS side of things. */
+    /* Hide the nav if the screen becomes mobile */
     let handleResize = () =>
     {
-        if (window.innerWidth > 768) {
-            hideNav();
-        }
+        setMobile(window.innerWidth <= 768);
+        if(!isMobile) hideNav();
     }
 
     useEffect( () =>
@@ -56,12 +57,12 @@ function NavBar() {
 
                 <img src="/images/pfp.jpg" alt="profile picture" className="navbar__profile-image"/>
 
-                <NavLinks isVisible={isNavLinkVisible}>
-                    <NavItem to="/" Icon={Icons.Home} onClick={hideNav}>Home</NavItem>
-                    <NavItem to="/journal" Icon={Icons.Journal} onClick={hideNav}>Journal</NavItem>
-                    <NavItem to="/thoughts" Icon={Icons.Thought} onClick={hideNav}>Thoughts</NavItem>
-                    <NavItem to="/projects" Icon={Icons.Project} onClick={hideNav}>Projects</NavItem>
-                    <NavItem to="/other" Icon={Icons.Other} onClick={hideNav}>Other</NavItem>
+                <NavLinks isVisible={isNavLinkVisible} handleClick={hideNav} isMobile={isMobile}>
+                    <NavItem to="/" Icon={Icons.Home}>Home</NavItem>
+                    <NavItem to="/journal" Icon={Icons.Journal}>Journal</NavItem>
+                    <NavItem to="/thoughts" Icon={Icons.Thought}>Thoughts</NavItem>
+                    <NavItem to="/projects" Icon={Icons.Project}>Projects</NavItem>
+                    <NavItem to="/other" Icon={Icons.Other}>Other</NavItem>
                 </NavLinks>
 
                 <button className="navbar__icon contact-button">
