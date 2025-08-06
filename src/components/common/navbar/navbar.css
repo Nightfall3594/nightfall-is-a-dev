@@ -33,16 +33,13 @@
     bottom: 0;
     width: 100%;
     margin: 0 auto;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--bg);
     padding: 1.25rem 0 2rem 0;
     z-index: 101;
-}
-
-.navbar__links--visible {
-    display: flex !important;
+    border-radius: 20px 20px 0 0;
 }
 
 .navbar__links ul {
