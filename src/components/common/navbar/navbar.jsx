@@ -1,7 +1,7 @@
 import './navbar.css'
 
-import NavItem from './navitem.jsx'
-import NavLinks from "./navlinks.jsx";
+import NavItem from './navitems/navitem.jsx'
+import NavLinks from "./navlinks/navlinks.jsx";
 import * as Icons from '../icons/index.js'
 import Overlay from "../overlays/overlay.jsx";
 

@@ -40,6 +40,7 @@
     padding: 1.25rem 0 2rem 0;
     z-index: 101;
     border-radius: 20px 20px 0 0;
+    overflow: hidden;
 }
 
 .navbar__links ul {
@@ -105,11 +106,6 @@
 
 @media (min-width: 768px) {
 
-    /* Resetting mobile styles */
-    .navbar__links {
-        display: flex;
-    }
-
     .navbar__links ul::before {
         display: none;
     }
@@ -141,8 +137,8 @@
     }
 
     .navbar__links {
+
         /* Style reset */
-        position: static;
         left: auto;
         bottom: auto;
         width: auto;
@@ -150,6 +146,8 @@
         background-color: initial;
 
         /* Actual desktop styles */
+        position: relative;
+        overflow: hidden;
         display: flex;
         justify-content: space-around;
         border: 1px solid var(--border);
@@ -160,17 +158,21 @@
                 oklch(30% 0.005 0deg),
                 var(--bg)
         );
+
+
     }
 
     .navbar__links ul {
         list-style: none;
         display: flex;
         justify-content: space-between;
+        z-index: 100;
     }
 
     .navbar__links li {
         padding: 0.35rem 0.75rem;
         position: relative;
+        z-index: 100;
     }
 
     .navbar__underline {
@@ -211,5 +213,17 @@
     .navbar__link--active svg {
         margin-right: 0.5rem;
         color: var(--primary);
+    }
+
+    .navlink-glow {
+        width: 5rem;
+        height: 5rem;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: 50%;
+        background: radial-gradient(var(--muted-primary) 20%, transparent 100%);
+        position: absolute;
+        z-index: 99;
+        filter: blur(30px);
+        pointer-events: none;
     }
 }
