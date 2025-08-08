@@ -52,7 +52,7 @@ function NavBar() {
                     className="navbar__icon hamburger-menu"
                     onClick={showNav}
                 >
-                    <Icons.Hamburger className="navbar__icon"/>
+                    <Icons.Hamburger/>
                 </button>
 
                 <img src="/images/pfp.jpg" alt="profile picture" className="navbar__profile-image"/>
