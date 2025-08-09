@@ -6,7 +6,22 @@
     justify-content: space-around;
     position: sticky;
     top: 0;
-    z-index: 998;
+    z-index: 99;
+}
+
+/**
+Frosted glass backdrop/background
+component used over simple backdrop filter on parent
+due to backdrop filter interfering with the mobile navlink's positioning
+ */
+.navbar__backdrop {
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120, 120, 120, 0.2);
+    backdrop-filter: blur(20px);
+    z-index: -1;
 }
 
 .navbar__profile-image {
@@ -107,6 +122,10 @@
     font-family: 'JetBrains Mono Thin', sans-serif;
 }
 
+.navbar__overlay {
+    z-index: 101;
+}
+
 /* Desktop styles */
 
 @media (min-width: 768px) {
@@ -133,10 +152,6 @@
         background-color: transparent;
     }
 
-    .overlay {
-        display: none;
-    }
-
     .hamburger-menu {
         display: none;
     }
@@ -148,9 +163,9 @@
         bottom: auto;
         width: auto;
         margin: initial;
-        background-color: initial;
 
         /* Actual desktop styles */
+        background-color: var(--bg);
         position: relative;
         overflow: hidden;
         display: flex;
@@ -163,8 +178,6 @@
                 oklch(30% 0.005 0deg),
                 var(--bg)
         );
-
-
     }
 
     .navbar__links ul {

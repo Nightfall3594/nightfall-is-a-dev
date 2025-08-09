@@ -30,18 +30,34 @@ function DesktopNavLinks({children}) {
         setHovered(true);
     };
 
+    const variants = {
+        default: {
+            transition: {
+                duration: 0.5,
+            }
+        },
+        frosted: {
+            background: "transparent",
+            border: "1px solid transparent",
+            transition: {
+                duration: 0.5,
+            }
+        }
+    }
+
     return (
-        <nav className="navbar__links"
+        <motion.nav className="navbar__links"
              onMouseMove={handleMouseMove}
              onMouseLeave={handleMouseOut}
              onMouseEnter={handleMouseEnter}
+             variants={variants}
         >
             <motion.ul layout>
                 {children}
             </motion.ul>
 
             <NavLinkGlow position={position} isVisible={isHovered}/>
-        </nav>
+        </motion.nav>
     )
 }
 

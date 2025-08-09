@@ -6,6 +6,8 @@ import * as Icons from '../icons/index.js'
 import Overlay from "../overlays/overlay.jsx";
 
 import {useEffect, useState} from "react";
+import {motion} from "framer-motion";
+import NavbarBackdrop from "./navlinks/navbar-backdrop.jsx";
 
 
 function NavBar() {
@@ -38,38 +40,78 @@ function NavBar() {
         return () => window.removeEventListener('resize', handleResize);
     })
 
+    /* Frosted glass effect */
+    const [isFrosted, setFrosted] = useState(false);
+
+    const handleScroll = () => {
+        setFrosted(window.scrollY > 60);
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    })
+
+
+    const navbarVariants={
+        default: {
+            borderBottomWidth: 0,
+            borderBottomColor: 'rgba(0, 0, 0, 0)',
+            borderBottomStyle: 'solid',
+        },
+
+        frosted: {
+            borderBottomWidth: 1,
+            borderBottomColor: 'rgba(255,255,255,1)',
+            borderBottomStyle: 'solid',
+        }
+    }
+
 
     return (
-        <>
+        <motion.header
+            className="navbar"
+            variants={navbarVariants}
+            initial="default"
+            animate={isFrosted ? "frosted" : "default"}
+        >
+
             <Overlay
                 className="navbar__overlay"
-                 onClick={hideNav}
-                 isVisible={isOverlayVisible}
+                onClick={hideNav}
+                isVisible={isOverlayVisible}
             />
 
-            <header className="navbar">
-                <button
-                    className="navbar__icon hamburger-menu"
-                    onClick={showNav}
-                >
-                    <Icons.Hamburger/>
-                </button>
+            <button
+                className="navbar__icon hamburger-menu"
+                onClick={showNav}
+            >
+                <Icons.Hamburger/>
+            </button>
 
-                <img src="/images/pfp.jpg" alt="profile picture" className="navbar__profile-image"/>
+            <img src="/images/pfp.jpg" alt="profile picture" className="navbar__profile-image"/>
 
-                <NavLinks isVisible={isNavLinkVisible} handleClick={hideNav} isMobile={isMobile}>
-                    <NavItem to="/" Icon={Icons.Home}>Home</NavItem>
-                    <NavItem to="/journal" Icon={Icons.Journal}>Journal</NavItem>
-                    <NavItem to="/thoughts" Icon={Icons.Thought}>Thoughts</NavItem>
-                    <NavItem to="/projects" Icon={Icons.Project}>Projects</NavItem>
-                    <NavItem to="/other" Icon={Icons.Other}>Other</NavItem>
-                </NavLinks>
+            {/* isVisible, handleClick are all mobile-only.
+            isMobile could be relegated to NavLinks.jsx, to reduce markup
 
-                <button className="navbar__icon contact-button">
-                    <Icons.Mail/>
-                </button>
-            </header>
-        </>
+            To do: find a way to relegate them properly so that they are strictly mobile only
+            Without passing unnecessary props */}
+
+            <NavLinks isVisible={isNavLinkVisible} handleClick={hideNav} isMobile={isMobile}>
+                <NavItem to="/" Icon={Icons.Home}>Home</NavItem>
+                <NavItem to="/journal" Icon={Icons.Journal}>Journal</NavItem>
+                <NavItem to="/thoughts" Icon={Icons.Thought}>Thoughts</NavItem>
+                <NavItem to="/projects" Icon={Icons.Project}>Projects</NavItem>
+                <NavItem to="/other" Icon={Icons.Other}>Other</NavItem>
+            </NavLinks>
+
+            <button className="navbar__icon contact-button">
+                <Icons.Mail/>
+            </button>
+
+            <NavbarBackdrop isVisible={isFrosted}/>
+
+        </motion.header>
     )
 }
 
