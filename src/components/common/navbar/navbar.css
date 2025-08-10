@@ -148,6 +148,10 @@ due to backdrop filter interfering with the mobile navlink's positioning
         text-align: left;
     }
 
+    .navbar__links span:hover {
+        color: var(--primary);
+    }
+
     .navbar__links a:hover{
         background-color: transparent;
     }
