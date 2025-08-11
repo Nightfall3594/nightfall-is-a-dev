@@ -4,6 +4,7 @@ import NavItem from './navitems/navitem.jsx'
 import NavLinks from "./navlinks/navlinks.jsx";
 import * as Icons from '../icons/index.js'
 import Overlay from "../overlays/overlay.jsx";
+import {NavContext} from "./navContext.js";
 
 import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
@@ -79,13 +80,19 @@ function NavBar() {
 
             {/* Solution A: use a navcontext, and let mobile navlinks refer to that context instead. */}
 
-            <NavLinks isVisible={isMobileNavVisible} handleClick={() => setMobileNavVisible(false)} isMobile={isMobile}>
-                <NavItem to="/" Icon={Icons.Home}>Home</NavItem>
-                <NavItem to="/journal" Icon={Icons.Journal}>Journal</NavItem>
-                <NavItem to="/thoughts" Icon={Icons.Thought}>Thoughts</NavItem>
-                <NavItem to="/projects" Icon={Icons.Project}>Projects</NavItem>
-                <NavItem to="/other" Icon={Icons.Other}>Other</NavItem>
-            </NavLinks>
+            <NavContext.Provider value={{
+                isVisible: isMobileNavVisible,
+                handleClick: () => setMobileNavVisible(false),
+                isMobile: isMobile
+            }}>
+                <NavLinks>
+                    <NavItem to="/" Icon={Icons.Home}>Home</NavItem>
+                    <NavItem to="/journal" Icon={Icons.Journal}>Journal</NavItem>
+                    <NavItem to="/thoughts" Icon={Icons.Thought}>Thoughts</NavItem>
+                    <NavItem to="/projects" Icon={Icons.Project}>Projects</NavItem>
+                    <NavItem to="/other" Icon={Icons.Other}>Other</NavItem>
+                </NavLinks>
+            </NavContext.Provider>
 
             <button className="navbar__icon contact-button">
                 <Icons.Mail/>

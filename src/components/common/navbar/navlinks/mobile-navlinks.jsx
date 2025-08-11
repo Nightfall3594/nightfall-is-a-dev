@@ -1,5 +1,6 @@
 import {AnimatePresence, easeOut, motion} from "framer-motion";
 import React from "react";
+import {NavContext} from "../navContext.js";
 
 
 const mobileNavLinkVariants = {
@@ -15,7 +16,9 @@ const mobileNavLinkVariants = {
     }
 };
 
-function MobileNavLinks({isVisible, children}) {
+function MobileNavLinks({children}) {
+
+    const {isVisible} = React.useContext(NavContext);
 
     return (
         <AnimatePresence>
