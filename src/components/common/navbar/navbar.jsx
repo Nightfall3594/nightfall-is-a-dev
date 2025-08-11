@@ -9,6 +9,7 @@ import {NavContext} from "./navContext.js";
 import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import NavbarBackdrop from "./navlinks/navbar-backdrop.jsx";
+import NavButton from "./navbutton.jsx";
 
 const navbarVariants={
     default: {
@@ -63,22 +64,9 @@ function NavBar() {
                 isVisible={isMobileNavVisible}
             />
 
-            <button
-                className="navbar__icon hamburger-menu"
-                onClick={() => setMobileNavVisible(true)}
-            >
-                <Icons.Hamburger/>
-            </button>
+            <NavButton Icon={Icons.Hamburger} className="hamburger-menu" onClick={() => setMobileNavVisible(true)} />
 
             <img src="/images/pfp.jpg" alt="profile picture" className="navbar__profile-image"/>
-
-            {/* isVisible, handleClick are all mobile-only.
-            isMobile could be relegated to NavLinks.jsx, to reduce markup
-
-            To do: find a way to relegate them properly so that they are strictly mobile only
-            Without passing unnecessary props */}
-
-            {/* Solution A: use a navcontext, and let mobile navlinks refer to that context instead. */}
 
             <NavContext.Provider value={{
                 isVisible: isMobileNavVisible,
@@ -94,9 +82,7 @@ function NavBar() {
                 </NavLinks>
             </NavContext.Provider>
 
-            <button className="navbar__icon contact-button">
-                <Icons.Mail/>
-            </button>
+            <NavButton Icon={Icons.Mail} className="navbar__icon" onClick={() => {}} />
 
             <NavbarBackdrop isVisible={isFrosted}/>
 
