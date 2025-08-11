@@ -22,6 +22,8 @@ function DesktopNavLinks({children}) {
 
     const [isHovered, setHovered] = useState(false);
 
+
+    /* just use lambdas */
     const handleMouseOut = () => {
         setHovered(false);
     };

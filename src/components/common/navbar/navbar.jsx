@@ -9,63 +9,43 @@ import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import NavbarBackdrop from "./navlinks/navbar-backdrop.jsx";
 
+const navbarVariants={
+    default: {
+        borderBottomWidth: 0,
+        borderBottomColor: 'rgba(0, 0, 0, 0)',
+        borderBottomStyle: 'solid',
+    },
+
+    frosted: {
+        borderBottomWidth: 1,
+        borderBottomColor: 'rgba(255,255,255,1)',
+        borderBottomStyle: 'solid',
+    }
+}
 
 function NavBar() {
 
-    const [isOverlayVisible, setOverlayVisible] = useState(false);
-    const [isNavLinkVisible, setNavLinkVisible] = useState(false);
-
+    const [isMobileNavVisible, setMobileNavVisible] = useState(false);
     const [isMobile, setMobile] = useState(window.innerWidth <= 768);
-
-    let hideNav = () => {
-        setOverlayVisible(false);
-        setNavLinkVisible(false);
-    }
-
-    let showNav = () => {
-        setOverlayVisible(true);
-        setNavLinkVisible(true);
-    }
-
-    /* Hide the nav if the screen becomes mobile */
-    let handleResize = () =>
-    {
-        setMobile(window.innerWidth <= 768);
-        if(!isMobile) hideNav();
-    }
-
-    useEffect( () =>
-    {
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    })
-
-    /* Frosted glass effect */
     const [isFrosted, setFrosted] = useState(false);
+
+    const handleResize = () => {
+        setMobile(window.innerWidth <= 768);
+        if(!isMobile) setMobileNavVisible(false);
+    }
 
     const handleScroll = () => {
         setFrosted(window.scrollY > 60);
     }
 
-    useEffect(() => {
+    useEffect( () => {
+        window.addEventListener('resize', handleResize);
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    })
-
-
-    const navbarVariants={
-        default: {
-            borderBottomWidth: 0,
-            borderBottomColor: 'rgba(0, 0, 0, 0)',
-            borderBottomStyle: 'solid',
-        },
-
-        frosted: {
-            borderBottomWidth: 1,
-            borderBottomColor: 'rgba(255,255,255,1)',
-            borderBottomStyle: 'solid',
-        }
-    }
+        return () => {
+            window.removeEventListener('resize', handleResize)
+            window.removeEventListener('scroll', handleScroll);
+        };
+    },[])
 
 
     return (
@@ -78,13 +58,13 @@ function NavBar() {
 
             <Overlay
                 className="navbar__overlay"
-                onClick={hideNav}
-                isVisible={isOverlayVisible}
+                onClick={() => setMobileNavVisible(false)}
+                isVisible={isMobileNavVisible}
             />
 
             <button
                 className="navbar__icon hamburger-menu"
-                onClick={showNav}
+                onClick={() => setMobileNavVisible(true)}
             >
                 <Icons.Hamburger/>
             </button>
@@ -97,7 +77,9 @@ function NavBar() {
             To do: find a way to relegate them properly so that they are strictly mobile only
             Without passing unnecessary props */}
 
-            <NavLinks isVisible={isNavLinkVisible} handleClick={hideNav} isMobile={isMobile}>
+            {/* Solution A: use a navcontext, and let mobile navlinks refer to that context instead. */}
+
+            <NavLinks isVisible={isMobileNavVisible} handleClick={() => setMobileNavVisible(false)} isMobile={isMobile}>
                 <NavItem to="/" Icon={Icons.Home}>Home</NavItem>
                 <NavItem to="/journal" Icon={Icons.Journal}>Journal</NavItem>
                 <NavItem to="/thoughts" Icon={Icons.Thought}>Thoughts</NavItem>
