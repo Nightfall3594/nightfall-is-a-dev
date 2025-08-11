@@ -109,7 +109,7 @@ due to backdrop filter interfering with the mobile navlink's positioning
     width: 16px;
     height: 16px;
     color: var(--text);
-    padding: 0.35rem;
+    padding: 0.5rem;
     border-radius: 100%;
     border: 1px solid var(--border);
 
