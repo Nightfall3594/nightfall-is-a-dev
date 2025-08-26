@@ -5,13 +5,30 @@ import './styles/utilities.css'
 import Navbar from "./components/common/navbar/navbar.jsx";
 import Footer from "./components/common/footer/footer.jsx"
 import Home from "./components/pages/home/home.jsx";
-import {Routes, Route} from "react-router-dom";
 import Articles from "./components/pages/articles/articles.jsx";
+
+import {Routes, Route, useLocation} from "react-router-dom";
+import {useEffect} from "react";
+
+
+// Scroll to top on route change.
+function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+}
 
 function App() {
 
   return (
     <>
+        {/* Scroll to top on Route change. */}
+        <ScrollToTop />
+
         <Navbar />
 
         <Routes>
