@@ -4,8 +4,14 @@ import React from "react";
 
 function DesktopNavItem({children, Icon, to}){
 
-    const fullPath = useResolvedPath(to)
-    const isMatch = useMatch({path: fullPath.pathname})
+    const {pathname} = useResolvedPath(to)
+
+    // For root path "/", we need exact matching.
+    // For others, allow partial match (so parent nav items stay active).
+    const isMatch = useMatch({
+        path: pathname,
+        end: pathname === "/"
+    })
 
     return (
         <motion.li layout className={isMatch ? "navbar__link--active" : ""}>
