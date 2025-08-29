@@ -1,4 +1,7 @@
 
+.article-post {
+}
+
 .article-post__content {
     margin: 1rem;
     padding: 10%;
@@ -11,6 +14,10 @@
 
 .article-post__sidebar {
     display: none;
+}
+
+.article-post__sidebar a {
+    text-decoration: none;
 }
 
 
