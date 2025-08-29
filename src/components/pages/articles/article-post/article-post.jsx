@@ -4,6 +4,7 @@ import './article-post.css'
 import ArticlePostHeader from "./article-post-header.jsx";
 import ArticleBody from "./article-body.jsx";
 import {useEffect, useState} from "react";
+import SidebarChapter from "./sidebar/sidebar-chapter.jsx";
 
 export default function ArticlePost({}) {
 
@@ -58,6 +59,20 @@ export default function ArticlePost({}) {
                 </ArticleBody>
 
             </div>
+
+
+            <div className="article-post__sidebar">
+                <div className="sidebar__chapters">
+                    <SidebarChapter> Lorem Ipsum Example </SidebarChapter>
+                    <SidebarChapter> Lorem Ipsum Example </SidebarChapter>
+                    <SidebarChapter> Lorem Ipsum Example </SidebarChapter>
+                    <SidebarChapter> Lorem Ipsum Example </SidebarChapter>
+                </div>
+
+                <hr/>
+
+            </div>
+
         </section>
     )
 }
