@@ -4,7 +4,8 @@ import './article-post.css'
 import ArticlePostHeader from "./article-post-header.jsx";
 import ArticleBody from "./article-body.jsx";
 import {useEffect, useState} from "react";
-import SidebarChapter from "./sidebar/sidebar-chapter.jsx";
+import SidebarChapters from "./sidebar/sidebar-chapters.jsx";
+
 import dedent from "dedent";
 
 const PLACEHOLDER_TEXT = `
@@ -80,15 +81,7 @@ export default function ArticlePost({}) {
 
 
             <div className="article-post__sidebar">
-                <div className="sidebar__chapters">
-                    {
-                        chapters.map((chapter) => {
-                            chapter = chapter.replace(/#\s/,"");
-                            let id = chapter.toLowerCase().trim().replace(/\s/g, "-");
-                            return <SidebarChapter href={`#${id}`}>{chapter}</SidebarChapter>
-                        })
-                    }
-                </div>
+                <SidebarChapters chapters={chapters}/>
 
                 <hr/>
 
