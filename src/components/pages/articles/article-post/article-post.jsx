@@ -1,6 +1,8 @@
 import {useParams} from "react-router-dom";
 
 import './article-post.css'
+import './sidebar/sidebar.css'
+
 import ArticlePostHeader from "./article-post-header.jsx";
 import ArticleBody from "./article-body.jsx";
 import {useEffect, useState} from "react";
