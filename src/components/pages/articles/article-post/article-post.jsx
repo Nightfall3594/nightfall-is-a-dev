@@ -9,6 +9,8 @@ import {useEffect, useState} from "react";
 import SidebarChapters from "./sidebar/sidebar-chapters.jsx";
 
 import dedent from "dedent";
+import DesktopSidebar from "./sidebar/desktop-sidebar.jsx";
+import Sidebar from "./sidebar/sidebar.jsx";
 
 const PLACEHOLDER_TEXT = `
                     # Lorem Ipsum Example
@@ -56,12 +58,31 @@ export default function ArticlePost({}) {
 
     const [content, setContent] = useState(null);
 
+    // Get all chapter ids, in array format
     const [chapters, setChapters] = useState([]);
 
+
     useEffect(() => {
-        setChapters(dedent(PLACEHOLDER_TEXT).trim().match(/^#\s(.+)$/gm))
-        console.log(chapters);
+        setChapters(
+            dedent(PLACEHOLDER_TEXT)
+                .trim()
+                .match(/^#\s(.+)$/gm))
     },[])
+
+
+    // For responsive behavior
+    const [isMobile, setMobile] = useState(window.innerWidth <= 768);
+
+    const handleResize = (event) => {
+        setMobile(window.innerWidth <= 768);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    })
+
+
 
     return (
         <section className="article-post">
@@ -81,13 +102,7 @@ export default function ArticlePost({}) {
 
             </div>
 
-
-            <div className="article-post__sidebar">
-                <SidebarChapters chapters={chapters}/>
-
-                <hr/>
-
-            </div>
+            <Sidebar isMobile={isMobile} chapters={chapters}/>
 
         </section>
     )
