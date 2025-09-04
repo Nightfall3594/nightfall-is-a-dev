@@ -1,8 +1,10 @@
 import './articles.css'
-import ScrollUpButton from "./scroll-up-button.jsx";
+import ArrowUp from "../../common/icons/arrow-up.jsx";
+import FloatingButton from "../../common/buttons/floating-button.jsx";
 import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import ArticleLink from "./article-item.jsx";
+import FloatingButtonContainer from "../../common/buttons/floating-button-container.jsx";
 
 
 const articleListVariants = {
@@ -50,7 +52,15 @@ export default function Articles() {
                 <ArticleLink to="/home" text="My Reaction to that Information" />
                 <ArticleLink to="/home" text="My Reaction to that Information" />
             </motion.div>
-            <ScrollUpButton isVisible={isScrolled}/>
+
+            <FloatingButtonContainer>
+                <FloatingButton
+                    isVisible={isScrolled}
+                    Icon={ArrowUp}
+                    onClick={() => window.scrollTo(0, 0)}
+                />
+            </FloatingButtonContainer>
+
         </section>
     )
 }
