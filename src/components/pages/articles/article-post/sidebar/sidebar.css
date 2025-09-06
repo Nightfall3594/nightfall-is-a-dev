@@ -68,9 +68,16 @@
 
     }
 
+    .article-post__sidebar:before {
+        display: none;
+    }
 
     .article-post__sidebar hr {
         margin: 0 1rem;
         border-top: 1px solid var(--lighter-bg);
+    }
+
+    .sidebar__chapters {
+        width: auto;
     }
 }
