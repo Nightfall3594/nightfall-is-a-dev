@@ -6,11 +6,13 @@ import './sidebar/sidebar.css'
 import ArticlePostHeader from "./article-post-header.jsx";
 import ArticleBody from "./article-body.jsx";
 import {useEffect, useState} from "react";
-import SidebarChapters from "./sidebar/sidebar-chapters.jsx";
+import {SidebarContext} from "./sidebar/SidebarContext.js";
 
 import dedent from "dedent";
-import DesktopSidebar from "./sidebar/desktop-sidebar.jsx";
 import Sidebar from "./sidebar/sidebar.jsx";
+import FloatingButtonContainer from "../../../common/buttons/floating-button-container.jsx";
+import FloatingButton from "../../../common/buttons/floating-button.jsx";
+import Hamburger from "../../../common/icons/hamburger.jsx";
 
 const PLACEHOLDER_TEXT = `
                     # Lorem Ipsum Example
@@ -75,6 +77,9 @@ export default function ArticlePost({}) {
 
     const handleResize = (event) => {
         setMobile(window.innerWidth <= 768);
+        if (!isMobile) {
+            setMobileSidebarVisible(false);
+        }
     }
 
     useEffect(() => {
@@ -82,6 +87,8 @@ export default function ArticlePost({}) {
         return () => window.removeEventListener('resize', handleResize);
     })
 
+
+    const [isMobileSidebarVisible, setMobileSidebarVisible] = useState(false);
 
 
     return (
@@ -102,7 +109,23 @@ export default function ArticlePost({}) {
 
             </div>
 
-            <Sidebar isMobile={isMobile} chapters={chapters}/>
+
+            <SidebarContext.Provider
+                value = {{
+                    isMobile: isMobile,
+                    isVisible: isMobileSidebarVisible,
+                    onClick: () => setMobileSidebarVisible(false)
+                }}
+            >
+                <Sidebar chapters={chapters}/>
+            </SidebarContext.Provider>
+
+
+            {isMobile &&
+                <FloatingButtonContainer>
+                    <FloatingButton Icon={Hamburger} onClick={() => setMobileSidebarVisible(true)} />
+                </FloatingButtonContainer>
+            }
 
         </section>
     )

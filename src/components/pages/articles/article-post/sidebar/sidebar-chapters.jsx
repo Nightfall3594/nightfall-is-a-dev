@@ -8,7 +8,13 @@ export default function SidebarChapters({chapters}){
                 chapters.map((chapter) => {
                     chapter = chapter.replace(/#\s/,"");
                     let id = chapter.toLowerCase().trim().replace(/\s/g, "-");
-                    return <SidebarChapter href={`#${id}`}>{chapter}</SidebarChapter>
+                    return (
+                        <SidebarChapter
+                            href={`#${id}`}
+                        >
+                            {chapter}
+                        </SidebarChapter>
+                    )
                 })
             }
         </div>
