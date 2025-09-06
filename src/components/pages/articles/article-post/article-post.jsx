@@ -13,6 +13,7 @@ import Sidebar from "./sidebar/sidebar.jsx";
 import FloatingButtonContainer from "../../../common/buttons/floating-button-container.jsx";
 import FloatingButton from "../../../common/buttons/floating-button.jsx";
 import Hamburger from "../../../common/icons/hamburger.jsx";
+import ArrowUp from "../../../common/icons/arrow-up.jsx";
 
 const PLACEHOLDER_TEXT = `
                     # Lorem Ipsum Example
@@ -82,9 +83,21 @@ export default function ArticlePost({}) {
         }
     }
 
+    // For handling whether the scroll-to-top button will appear (on mobile)
+    const [hasScrolled, setScrolled] = useState(false);
+
+    const handleScroll = (event) => {
+        setScrolled(window.scrollY >= 60);
+    }
+
     useEffect(() => {
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
+        }
     })
 
 
@@ -124,6 +137,7 @@ export default function ArticlePost({}) {
             {isMobile &&
                 <FloatingButtonContainer>
                     <FloatingButton Icon={Hamburger} onClick={() => setMobileSidebarVisible(true)} />
+                    <FloatingButton Icon={ArrowUp} isVisible={hasScrolled} onClick={() => window.scrollTo(0, 0)} />
                 </FloatingButtonContainer>
             }
 
