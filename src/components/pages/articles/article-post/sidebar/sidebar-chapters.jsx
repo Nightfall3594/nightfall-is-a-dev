@@ -1,6 +1,6 @@
 import SidebarChapter from "./sidebar-chapter.jsx";
 
-export default function SidebarChapters({chapters}){
+export default function SidebarChapters({chapters, variants}){
     return (
 
         <div className="sidebar__chapters">
@@ -11,6 +11,7 @@ export default function SidebarChapters({chapters}){
                     return (
                         <SidebarChapter
                             href={`#${id}`}
+                            variants={variants}
                         >
                             {chapter}
                         </SidebarChapter>
