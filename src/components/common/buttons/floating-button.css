@@ -10,7 +10,7 @@
 .floating-button {
     color: var(--text);
     background-color: var(--bg);
-    padding: 0.5rem;
+    padding: 0.4rem 0.5rem; /* 0.4 due to svg having irregular proportions */
     border: 2px solid  var(--border);
     border-radius: 25%;
 }
