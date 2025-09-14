@@ -127,6 +127,7 @@ export default function ArticlePost({}) {
                 value = {{
                     isMobile: isMobile,
                     isVisible: isMobileSidebarVisible,
+                    hasScrolled: hasScrolled,
                     onClick: () => setMobileSidebarVisible(false)
                 }}
             >

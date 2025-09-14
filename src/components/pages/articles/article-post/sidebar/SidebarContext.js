@@ -4,6 +4,7 @@ export const SidebarContext = createContext(
     {
         onClick: () => {},
         isVisible: false,
-        isMobile: false
+        isMobile: false,
+        hasScrolled: false,
     }
 )
