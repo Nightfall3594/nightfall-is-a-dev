@@ -5,10 +5,17 @@
 
 .thoughts__title {
     margin-bottom: 2rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 400px;
 }
 
 .thoughts__list {
-    width: calc(100% - 2rem);
+    width: 60%;
+    min-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 1rem;
     display: flex;
     align-items: flex-start;
