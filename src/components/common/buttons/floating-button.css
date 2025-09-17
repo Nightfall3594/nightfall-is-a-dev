@@ -1,0 +1,25 @@
+.floating-button-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.floating-button {
+    color: var(--text);
+    background-color: var(--bg);
+    padding: 0.4rem 0.5rem; /* 0.4 due to svg having irregular proportions */
+    border: 2px solid  var(--border);
+    border-radius: 25%;
+}
+
+.floating-button:hover {
+    cursor: pointer;
+}
+
+.floating-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
