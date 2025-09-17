@@ -7,6 +7,7 @@ import Footer from "./components/common/footer/footer.jsx"
 import Home from "./components/pages/home/home.jsx";
 import Articles from "./components/pages/articles/articles.jsx";
 import ArticlePost from "./components/pages/articles/article-post/article-post.jsx";
+import Thoughts from "./components/pages/thoughts/thoughts.jsx";
 
 import {Routes, Route, useLocation} from "react-router-dom";
 import {useEffect} from "react";
@@ -37,7 +38,7 @@ function App() {
             <Route path="/journal" element={<Articles/>} />
             <Route path="/journal/:articleID" element={<ArticlePost/>} />
             <Route path="/projects" element={<Home/>} />
-            <Route path="/thoughts" element={<Home/>} />
+            <Route path="/thoughts" element={<Thoughts/>} />
         </Routes>
 
         <Footer />
