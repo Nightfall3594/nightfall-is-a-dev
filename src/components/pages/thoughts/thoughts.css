@@ -1,14 +1,25 @@
 
 .thoughts {
-    margin: 10%;
+    margin: 5% 10%;
 }
 
-.thoughts__title {
-    margin-bottom: 2rem;
+.thoughts-title__container {
+    margin-bottom: 3rem;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
     min-width: 400px;
+}
+
+.thoughts__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.thoughts__subtitle {
+    color: var(--muted-text);
+    font-weight: normal;
+    font-size: 1.25rem;
 }
 
 .thoughts__list {
