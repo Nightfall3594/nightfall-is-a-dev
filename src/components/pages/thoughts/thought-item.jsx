@@ -9,9 +9,15 @@ export default function ThoughtItem({text}){
                 className="thought-item__pfp"
             />
 
-            <p className="thought-item__content">
-                {text}
-            </p>
+            <div className="thought-item__content">
+                <div className="thought-item__info">
+                    <p className="thought-item__author">Nightfall3594</p>
+                    <p className="thought-item__date">Jul 3, 2025</p>
+                </div>
+                <p className="thought-item__text">
+                    {text}
+                </p>
+            </div>
         </div>
     )
 }
