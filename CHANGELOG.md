@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.2.0...v1.3.0) (2025-09-17)
+
+
+### Features
+
+* add thoughts page ([0cd5b0a](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/0cd5b0a0e6a3181d30a60b5eee6c754a8699dd87))
+
 ## [1.2.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.1.0...v1.2.0) (2025-09-17)
 
 
