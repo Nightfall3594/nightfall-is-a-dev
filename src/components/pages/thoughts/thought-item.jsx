@@ -1,8 +1,26 @@
 import './thought-item.css'
+import {motion} from "framer-motion";
+
+const variants = {
+    initial: {
+        opacity: 0,
+        y: "20%"
+    },
+    animate: {
+        opacity: 1,
+        y: "0%",
+        transition: {
+            animation: "easeInOut"
+        }
+    }
+}
 
 export default function ThoughtItem({text, date}){
     return (
-        <div className="thought-item">
+        <motion.div
+            className="thought-item"
+            variants={variants}
+        >
             <img
                 src="/images/pfp.jpg"
                 alt="Nightfall3594"
@@ -18,6 +36,6 @@ export default function ThoughtItem({text, date}){
                     {text}
                 </p>
             </div>
-        </div>
+        </motion.div>
     )
 }

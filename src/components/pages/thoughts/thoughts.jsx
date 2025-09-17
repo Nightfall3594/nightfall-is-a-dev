@@ -1,27 +1,66 @@
 import './thoughts.css'
 import ThoughtItem from "./thought-item.jsx";
+import {motion} from "framer-motion";
+
+const parentVariants = {
+    initial: {
+    },
+    animate: {
+        transition: {
+            staggerChildren: 0.15,
+        }
+    }
+}
+
+const childVariants = {
+    initial: {
+        opacity: 0,
+        y: "20%"
+    },
+    animate: {
+        opacity: 1,
+        y: "0%"
+    }
+}
 
 export default function Thoughts(){
     return (
-        <section className="thoughts">
+        <motion.section
+            className="thoughts"
+            variants={parentVariants}
+            initial="initial"
+            animate="animate"
+        >
 
-            <div className="thoughts-title__container">
-                <h1 className="thoughts__title">
+            <motion.div
+                className="thoughts-title__container"
+                variants={parentVariants}
+            >
+                <motion.h1
+                    className="thoughts__title"
+                    variants={childVariants}
+                >
                     Thoughts
-                </h1>
+                </motion.h1>
 
-                <h2 className="thoughts__subtitle">
+                <motion.h2
+                    className="thoughts__subtitle"
+                    variants={childVariants}
+                >
                     Listen to my random ramblings :)
-                </h2>
-            </div>
+                </motion.h2>
+            </motion.div>
 
-            <div className="thoughts__list">
+            <motion.div
+                className="thoughts__list"
+                variants={parentVariants}
+            >
                 <ThoughtItem text={"Hello, world!"} date="July 3, 2025"/>
                 <ThoughtItem text={"Hello, world!"} date="July 3, 2025"/>
                 <ThoughtItem text={"Hello, world! Sometimes I need to test even longer text and that's okay"} date="July 3, 2025"/>
                 <ThoughtItem text={"Hello, world! I would like to test an even even even even even longer text to try and see how formatting looks"} date="July 3, 2025"/>
                 <ThoughtItem text={"Hello, world!\n\n\n\nSometimes I need to test even longer text and that's okay"} date="July 3, 2025"/>
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     )
 }
