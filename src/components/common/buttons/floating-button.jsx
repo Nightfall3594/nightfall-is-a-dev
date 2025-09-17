@@ -19,7 +19,7 @@ export default function FloatingButton({isVisible= true, onClick, Icon}) {
                     exit="hidden"
                     whileTap={{scale: 0.9}}
                 >
-                    <Icon />
+                    {Icon && <Icon />}
                 </motion.button>
             )}
         </AnimatePresence>

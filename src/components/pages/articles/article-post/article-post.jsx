@@ -1,5 +1,3 @@
-import {useParams} from "react-router-dom";
-
 import './article-post.css'
 import './sidebar/sidebar.css'
 
@@ -55,11 +53,12 @@ const PLACEHOLDER_TEXT = `
                     # Lorem Ipsum Example 5
                     `
 
-export default function ArticlePost({}) {
+export default function ArticlePost() {
 
-    const {articleID} = useParams();
-
-    const [content, setContent] = useState(null);
+    // Commented out for now, but left as a footnote for future integration
+    // const {articleID} = useParams();
+    //
+    // const [content, setContent] = useState(null);
 
     // Get all chapter ids, in array format
     const [chapters, setChapters] = useState([]);
@@ -76,7 +75,7 @@ export default function ArticlePost({}) {
     // For responsive behavior
     const [isMobile, setMobile] = useState(window.innerWidth <= 768);
 
-    const handleResize = (event) => {
+    const handleResize = () => {
         setMobile(window.innerWidth <= 768);
         if (!isMobile) {
             setMobileSidebarVisible(false);
@@ -86,7 +85,7 @@ export default function ArticlePost({}) {
     // For handling whether the scroll-to-top button will appear (on mobile)
     const [hasScrolled, setScrolled] = useState(false);
 
-    const handleScroll = (event) => {
+    const handleScroll = () => {
         setScrolled(window.scrollY >= 60);
     }
 
