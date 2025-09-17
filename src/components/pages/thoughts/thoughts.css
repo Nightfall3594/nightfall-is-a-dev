@@ -2,3 +2,16 @@
 .thoughts {
     margin: 10%;
 }
+
+.thoughts__title {
+    margin-bottom: 2rem;
+}
+
+.thoughts__list {
+    width: calc(100% - 2rem);
+    padding: 0 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
