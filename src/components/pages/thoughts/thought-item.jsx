@@ -1,6 +1,6 @@
 import './thought-item.css'
 
-export default function ThoughtItem({text}){
+export default function ThoughtItem({text, date}){
     return (
         <div className="thought-item">
             <img
@@ -12,7 +12,7 @@ export default function ThoughtItem({text}){
             <div className="thought-item__content">
                 <div className="thought-item__info">
                     <p className="thought-item__author">Nightfall3594</p>
-                    <p className="thought-item__date">Jul 3, 2025</p>
+                    <p className="thought-item__date">{date}</p>
                 </div>
                 <p className="thought-item__text">
                     {text}

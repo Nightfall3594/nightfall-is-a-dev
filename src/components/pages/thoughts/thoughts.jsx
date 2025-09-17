@@ -16,11 +16,11 @@ export default function Thoughts(){
             </div>
 
             <div className="thoughts__list">
-                <ThoughtItem text={"Hello, world!"}/>
-                <ThoughtItem text={"Hello, world!"}/>
-                <ThoughtItem text={"Hello, world! Sometimes I need to test even longer text and that's okay"}/>
-                <ThoughtItem text={"Hello, world! I would like to test an even even even even even longer text to try and see how formatting looks"}/>
-                <ThoughtItem text={"Hello, world!\n\n\n\nSometimes I need to test even longer text and that's okay"}/>
+                <ThoughtItem text={"Hello, world!"} date="July 3, 2025"/>
+                <ThoughtItem text={"Hello, world!"} date="July 3, 2025"/>
+                <ThoughtItem text={"Hello, world! Sometimes I need to test even longer text and that's okay"} date="July 3, 2025"/>
+                <ThoughtItem text={"Hello, world! I would like to test an even even even even even longer text to try and see how formatting looks"} date="July 3, 2025"/>
+                <ThoughtItem text={"Hello, world!\n\n\n\nSometimes I need to test even longer text and that's okay"} date="July 3, 2025"/>
             </div>
         </section>
     )
