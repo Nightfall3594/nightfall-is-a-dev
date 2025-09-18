@@ -1,0 +1,19 @@
+
+.projects {
+    margin: 10%;
+}
+
+.projects__header {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.projects__title {
+    margin-bottom: 0.5rem;
+}
+
+.projects__subtitle {
+    color: var(--muted-text);
+    font-size: 1rem;
+    font-weight: normal;
+}
