@@ -1,0 +1,52 @@
+
+.project-item {
+    display: flex;
+    max-width: 80%;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.project__image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 25%;
+}
+
+.project__image--empty {
+    width: 5rem;
+    height: 5rem;
+
+    border: 1px solid var(--border);
+    border-radius: 25%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5rem;
+    color: var(--text);
+
+    background-color: var(--lighter-bg);
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.project-info__name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.project-info__desc {
+    color: var(--muted-text);
+    font-size: 1rem;
+}
+
+

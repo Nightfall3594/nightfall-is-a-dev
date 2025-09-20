@@ -1,11 +1,12 @@
 
 .projects {
-    margin: 10%;
+    margin: 5% 10%;
+    min-height: 57vh;
 }
 
 .projects__header {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
 }
 
 .projects__title {
@@ -16,4 +17,12 @@
     color: var(--muted-text);
     font-size: 1rem;
     font-weight: normal;
+}
+
+.projects__list {
+    width: 80%;
+    margin: 5% auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 1rem;
 }
