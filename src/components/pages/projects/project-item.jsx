@@ -5,7 +5,7 @@ export default function ProjectItem({name, desc, image}) {
 
             {image
                 ? <img src={image} alt="project logo" className="project__image"/>
-                : <div className="project__image--empty">{name[0]}</div>
+                : <div className="project__image project__image--empty">{name[0]}</div>
             }
             <div className="project-info">
                 <p className="project-info__name">{name}</p>
