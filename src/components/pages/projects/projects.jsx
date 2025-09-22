@@ -11,11 +11,11 @@ export default function Projects(){
             </div>
 
             <div className="projects__list">
-                <ProjectItem desc="Hello world app writted in python" name={"Hello world"} image={"/images/pfp.jpg"}/>
-                <ProjectItem desc="Simple" name={"Hello world"} image={"/images/pfp.jpg"}/>
-                <ProjectItem desc="Hello world app writted in python and coded in java maybe idk this is filler" name={"Hello world"} />
-                <ProjectItem desc="Hello world app writted in python uvuvwevwevwe onyentenyevew umugubmwem osas" name={"Wello world"} />
-                <ProjectItem desc="Hello world app writted in python" name={"Trello world"} />
+                <ProjectItem desc="Hello world app writted in python" name={"Hello world"} image={"/images/pfp.jpg"} link={"https://google.com"}/>
+                <ProjectItem desc="Simple" name={"Hello world"} image={"/images/pfp.jpg"} link={"https://google.com"}/>
+                <ProjectItem desc="Hello world app writted in python and coded in java maybe idk this is filler" name={"Hello world"}  link={"https://google.com"}/>
+                <ProjectItem desc="Hello world app writted in python uvuvwevwevwe" name={"Wello world"}  link={"https://google.com"}/>
+                <ProjectItem desc="Hello world app writted in python" name={"Trello world"}  link={"https://google.com"}/>
             </div>
         </section>
     )

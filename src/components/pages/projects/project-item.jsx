@@ -1,7 +1,15 @@
 import './project-item.css'
-export default function ProjectItem({name, desc, image}) {
+
+import {motion} from "framer-motion";
+
+export default function ProjectItem({name, desc, image, link}) {
     return (
-        <div className="project-item">
+        <motion.a
+            className="project-item"
+            whileHover={{ scale: 1.1 }}
+            href={link}
+            target="_blank"
+        >
 
             {image
                 ? <img src={image} alt="project logo" className="project__image"/>
@@ -11,6 +19,6 @@ export default function ProjectItem({name, desc, image}) {
                 <p className="project-info__name">{name}</p>
                 <p className="project-info__desc">{desc}</p>
             </div>
-        </div>
+        </motion.a>
     )
 }
