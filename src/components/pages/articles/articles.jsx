@@ -6,6 +6,25 @@ import {motion} from "framer-motion";
 import ArticleLink from "./article-item.jsx";
 import FloatingButtonContainer from "../../common/buttons/floating-button-container.jsx";
 
+const sectionVariants = {
+    initial: {},
+    animate: {
+        transition: {
+            staggerChildren: 0.3,
+        }
+    }
+}
+
+const childVariants   = {
+    initial: {
+        opacity: 0,
+        y: "20%"
+    },
+    animate: {
+        opacity: 1,
+        y: "0%"
+    }
+}
 
 const articleListVariants = {
     initial: {},
@@ -33,12 +52,25 @@ export default function Articles() {
     })
 
     return (
-        <section className="articles">
+        <motion.section
+            className="articles"
+            variants={sectionVariants}
+            initial="initial"
+            animate="animate"
+        >
+            <motion.div className="articles__header" variants={articleListVariants}>
+                <motion.h1 className="articles__title" variants={childVariants}>
+                    Journal
+                </motion.h1>
+
+                <motion.h2 className="articles__subtitle" variants={childVariants}>
+                    Random tales, gossips, and more. Story time!
+                </motion.h2>
+            </motion.div>
+
             <motion.div
                 className="articles__list"
                 variants={articleListVariants}
-                initial="initial"
-                animate="animate"
             >
                 <ArticleLink to="/home" text="My Reaction to that Information" />
                 <ArticleLink to="/home" text="What is this? All placeholders? That's right" />
@@ -61,6 +93,6 @@ export default function Articles() {
                 />
             </FloatingButtonContainer>
 
-        </section>
+        </motion.section>
     )
 }
