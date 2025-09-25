@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     margin: 1rem 0;
+    position: relative;
 }
 
 .thought-item__pfp {
@@ -25,17 +26,12 @@
 .thought-item__date {
     font-size: 0.8rem;
     color: var(--muted-text);
-}
-
-.thought-item__content {
-
+    text-wrap: nowrap;
 }
 
 .thought-item__text {
     background-color: var(--lighter-bg);
     padding: 1rem;
     border-radius: 0 12px 12px 12px;
-    width: 100%;
-    max-width: 95%;
     white-space: pre-line; /* Make line breaks literal */
 }
