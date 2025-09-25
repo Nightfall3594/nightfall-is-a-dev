@@ -5,7 +5,7 @@
 }
 
 .projects__header {
-    width: 80%;
+    width: 100%;
     margin: 0 auto 2rem;
 }
 
@@ -20,16 +20,23 @@
 }
 
 .projects__list {
-    width: 80%;
+    width: 100%;
     margin: 5% auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
     gap: 2rem 1rem;
 }
 
 @media (min-width: 768px) {
 
+    .projects__header {
+        width: 80%;
+    }
+
     .projects__list {
+        width: 80%;
+        justify-items: start;
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 

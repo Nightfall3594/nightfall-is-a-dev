@@ -67,6 +67,7 @@
         flex-direction: row;
         justify-content: start;
         align-items: start;
+        width: 85%;
     }
 
     .project-info__name {
