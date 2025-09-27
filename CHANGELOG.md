@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.3.0...v1.4.0) (2025-09-27)
+
+
+### Features
+
+* add projects page ([b3c0141](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/b3c0141779ea7eb99100f76934c3985bb77a9056))
+* **articles-page:** add header for articles-page ([b3c0141](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/b3c0141779ea7eb99100f76934c3985bb77a9056))
+
+
+### Bug Fixes
+
+* **projects-page:** fix mobile responsiveness of project-items ([b3c0141](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/b3c0141779ea7eb99100f76934c3985bb77a9056))
+* **thoughts-page:** fix mobile responsiveness for small screens ([b3c0141](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/b3c0141779ea7eb99100f76934c3985bb77a9056))
+
 ## [1.3.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.2.0...v1.3.0) (2025-09-17)
 
 
