@@ -36,7 +36,8 @@ export default function Other() {
                 So, if you will chime in, read a little, and browse,
                 <br/><br/>
 
-                Welcome to my personal corner of the internet! <br/>
+                Welcome to my personal corner of the internet!
+                <br/><br/>
                 Enjoy your stay :)
 
 
