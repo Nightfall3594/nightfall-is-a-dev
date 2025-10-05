@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.4.0...v1.5.0) (2025-10-05)
+
+
+### Features
+
+* add about page ([6bff486](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/6bff486d78a5b829eb041499e84d543bb733820d))
+
 ## [1.4.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.3.0...v1.4.0) (2025-09-27)
 
 
