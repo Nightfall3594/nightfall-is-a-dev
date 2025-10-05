@@ -1,0 +1,48 @@
+
+.other {
+    min-width: 80%;
+    min-height: 100vh;
+    margin: 5% 10%;
+}
+
+.other-header__container {
+    margin-bottom: 3rem;
+}
+
+.other-header__title {
+    margin-bottom: 1rem;
+}
+
+.other-header__subtitle {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--muted-text);
+    font-weight: normal;
+}
+
+.about__title {
+    margin-bottom: 1rem;
+}
+
+.about__content {
+    text-align: left;
+    line-height: 1.7rem;
+    margin-bottom: 2rem;
+}
+
+.about__content p {
+    margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px){
+
+    .other{
+        min-width: 60%;
+        margin: 5% 20%;
+    }
+
+    .about__content {
+        text-align: justify;
+        line-height: 1.7rem;
+    }
+}
