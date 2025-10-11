@@ -1,6 +1,9 @@
 import './projects.css'
 import ProjectItem from "./project-item.jsx";
 import {motion} from "framer-motion";
+import {useEffect, useState} from "react";
+import useProjects from "../../../hooks/useProjects.js";
+import LoadingScreen from "../../common/loading-screen/loading-screen.jsx";
 
 const parentVariants = {
     hidden: {
@@ -29,6 +32,11 @@ const childVariants = {
 }
 
 export default function Projects(){
+
+    const {projects, isLoading} = useProjects();
+
+    if (isLoading) return <LoadingScreen/>
+
     return (
         <motion.section
             className="projects"
@@ -59,12 +67,19 @@ export default function Projects(){
             <motion.div
                 className="projects__list"
                 variants={parentVariants}
+                key={projects.length}
             >
-                <ProjectItem desc="Hello world app writted in python" name={"Hello world"} image={"/images/pfp.jpg"} link={"https://google.com"}/>
-                <ProjectItem desc="Simple" name={"Hello world"} image={"/images/pfp.jpg"} link={"https://google.com"}/>
-                <ProjectItem desc="Hello world app writted in python and coded in java maybe idk this is filler" name={"Hello world"}  link={"https://google.com"}/>
-                <ProjectItem desc="Hello world app writted in python uvuvwevwevwe" name={"Wello world"}  link={"https://google.com"}/>
-                <ProjectItem desc="Hello world app writted in python" name={"Trello world"}  link={"https://google.com"}/>
+                {
+                    projects.map((project) =>
+                    {
+                        return <ProjectItem
+                            name={project.title}
+                            desc={project.description}
+                            link={project.link}
+                            key={project.id}
+                        />
+                    })
+                }
             </motion.div>
         </motion.section>
     )
