@@ -1,6 +1,9 @@
 import './thoughts.css'
 import ThoughtItem from "./thought-item.jsx";
 import {motion} from "framer-motion";
+import LoadingScreen from "../../common/loading-screen/loading-screen.jsx";
+import thoughts from "../../common/icons/thoughts.jsx";
+import {useThoughts} from "../../../hooks/useThoughts.js";
 
 const parentVariants = {
     initial: {
@@ -24,6 +27,11 @@ const childVariants = {
 }
 
 export default function Thoughts(){
+
+    const {thoughts, isLoading} = useThoughts();
+
+    if(isLoading) return <LoadingScreen/>
+
     return (
         <motion.section
             className="thoughts"
@@ -54,12 +62,16 @@ export default function Thoughts(){
             <motion.div
                 className="thoughts__list"
                 variants={parentVariants}
+                key={thoughts.length}
             >
-                <ThoughtItem text={"Hello, world!"} date="July 3, 2025"/>
-                <ThoughtItem text={"Hello, world!"} date="July 3, 2025"/>
-                <ThoughtItem text={"Hello, world! Sometimes I need to test even longer text and that's okay"} date="July 3, 2025"/>
-                <ThoughtItem text={"Hello, world! I would like to test an even even even even even longer text to try and see how formatting looks"} date="July 3, 2025"/>
-                <ThoughtItem text={"Hello, world!\n\n\n\nSometimes I need to test even longer text and that's okay"} date="July 3, 2025"/>
+                {
+                    thoughts.map(thought => {
+                        return <ThoughtItem
+                            text={thought.body}
+                            date={new Date(thought.date_created).toLocaleDateString('en-CA')}
+                            key={thought.id}
+                        />})
+                }
             </motion.div>
         </motion.section>
     )
