@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import ArticleLink from "./article-item.jsx";
 import FloatingButtonContainer from "../../common/buttons/floating-button-container.jsx";
+import {useScroll} from "../../../hooks/useScroll.js";
 
 const sectionVariants = {
     initial: {},
@@ -37,19 +38,7 @@ const articleListVariants = {
 
 export default function Articles() {
 
-    const [isScrolled, setScrolled] = useState(false);
-
-    const handleScroll = () => {
-        setScrolled(window.scrollY > 60);
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    })
+    let isScrolled = useScroll()
 
     return (
         <motion.section

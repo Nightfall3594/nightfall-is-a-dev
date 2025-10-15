@@ -12,6 +12,7 @@ import FloatingButtonContainer from "../../../common/buttons/floating-button-con
 import FloatingButton from "../../../common/buttons/floating-button.jsx";
 import Hamburger from "../../../common/icons/hamburger.jsx";
 import ArrowUp from "../../../common/icons/arrow-up.jsx";
+import {useScroll} from "../../../../hooks/useScroll.js";
 
 const PLACEHOLDER_TEXT = `
                     # Lorem Ipsum Example
@@ -72,9 +73,13 @@ export default function ArticlePost() {
     },[])
 
 
+    // For handling whether the scroll-to-top button will appear (on mobile)
+    const hasScrolled = useScroll()
+
+
+    // TODO: Refactor into hook
     // For responsive behavior
     const [isMobile, setMobile] = useState(window.innerWidth <= 768);
-
     const handleResize = () => {
         setMobile(window.innerWidth <= 768);
         if (!isMobile) {
@@ -82,21 +87,9 @@ export default function ArticlePost() {
         }
     }
 
-    // For handling whether the scroll-to-top button will appear (on mobile)
-    const [hasScrolled, setScrolled] = useState(false);
-
-    const handleScroll = () => {
-        setScrolled(window.scrollY >= 60);
-    }
-
     useEffect(() => {
         window.addEventListener('resize', handleResize);
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('scroll', handleScroll);
-        }
+        return () => {window.removeEventListener('resize', handleResize);}
     })
 
 
