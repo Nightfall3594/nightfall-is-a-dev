@@ -1,11 +1,12 @@
 import './articles.css'
 import ArrowUp from "../../common/icons/arrow-up.jsx";
 import FloatingButton from "../../common/buttons/floating-button.jsx";
-import {useEffect, useState} from "react";
-import {motion} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import ArticleLink from "./article-item.jsx";
 import FloatingButtonContainer from "../../common/buttons/floating-button-container.jsx";
 import {useScroll} from "../../../hooks/useScroll.js";
+import useArticleList from "../../../hooks/useArticleList.js";
+import LoadingScreen from "../../common/loading-screen/loading-screen.jsx";
 
 const sectionVariants = {
     initial: {},
@@ -38,7 +39,10 @@ const articleListVariants = {
 
 export default function Articles() {
 
-    let isScrolled = useScroll()
+    let isScrolled = useScroll();
+    let {articles, isLoading} = useArticleList();
+
+    if(isLoading) return <LoadingScreen/>
 
     return (
         <motion.section
@@ -60,18 +64,20 @@ export default function Articles() {
             <motion.div
                 className="articles__list"
                 variants={articleListVariants}
+                // key={articles.length}
+
             >
-                <ArticleLink to="/home" text="My Reaction to that Information" />
-                <ArticleLink to="/home" text="What is this? All placeholders? That's right" />
-                <ArticleLink to="/home" text="Lorem Ipsum Dolor Sit Amet I Forgot the Rest" />
-                <ArticleLink to="/home" text="My Reaction to that Information" />
-                <ArticleLink to="/home" text="My Reaction to that Information" />
-                <ArticleLink to="/home" text="My Reaction to that Information" />
-                <ArticleLink to="/home" text="My Reaction to that Information" />
-                <ArticleLink to="/home" text="My Reaction to that Information" />
-                <ArticleLink to="/home" text="My Reaction to that Information" />
-                <ArticleLink to="/home" text="My Reaction to that Information" />
-                <ArticleLink to="/home" text="My Reaction to that Information" />
+                {
+                    articles.map((article) => {
+                        return <ArticleLink
+                            to={`/journal/` + article.article_slug}
+                            text={article.title}
+                            key={article.id}
+                            date={new Date(article.date_created).toLocaleDateString('en-CA')}
+                            variants={childVariants}
+                            />
+                    })
+                }
             </motion.div>
 
             <FloatingButtonContainer>

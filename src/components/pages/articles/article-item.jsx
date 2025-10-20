@@ -19,20 +19,20 @@ const LinkVariants = {
     },
 }
 
-const MotionLink = motion(Link)
+const MotionLink = motion.create(Link)
 
-export default function ArticleLink({text, to, date="Jan 16, 2025"}) {
+export default function ArticleLink({text, to, date}) {
 
     const [isHovered, setHovered] = useState(false);
 
     return (
-            <MotionLink
+        <motion.div variants={LinkVariants}>
+            <Link
                 to={to}
                 className='articles__item'
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
 
-                variants={LinkVariants}
             >
                 <h1>{text}</h1>
                 <div className='article-date__container'>
@@ -41,6 +41,7 @@ export default function ArticleLink({text, to, date="Jan 16, 2025"}) {
                 </div>
 
                 <ArticleLinkBackdrop isVisible={isHovered}/>
-            </MotionLink>
+            </Link>
+        </motion.div>
     )
 }
