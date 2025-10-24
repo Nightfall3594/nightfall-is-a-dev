@@ -23,9 +23,9 @@ const timelineContainerVariants = {
 
 function parseTimelineItem(item) {
 
-    if (item.type === "article_item") return <ArticleItem key={item.id} to={`/articles/${item.article_slug}`} articleName={item.title} />
-    else if (item.type === "project_item") return <ProjectItem key={item.id} to={`/projects`} projectName={item.title} />
-    else if (item.type === "thought_item") return <ThoughtItem key={item.id}>{item.body}</ThoughtItem>
+    if (item.type === "article_item") return <ArticleItem key={`a-${item.id}`} to={`/articles/${item.article_slug}`} articleName={item.title} />
+    else if (item.type === "project_item") return <ProjectItem key={`p-${item.id}`} to={`/projects`} projectName={item.title} />
+    else if (item.type === "thought_item") return <ThoughtItem key={`t-${item.id}`}>{item.body}</ThoughtItem>
 
     else throw new Error("Unhandled item type")
 }
