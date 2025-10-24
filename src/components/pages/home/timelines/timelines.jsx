@@ -2,10 +2,10 @@ import './timelines.css'
 
 import DateItem from './items/date-item.jsx'
 import Timeline from "./timeline.jsx";
-import * as Items from './index.js'
 
 import {motion} from "framer-motion";
 import ReadMore from "./read-more.jsx";
+import {ArticleItem, ProjectItem, ThoughtItem} from "./index.js";
 
 const timelineContainerVariants = {
     initial: {opacity: 0, y: "20%"},
@@ -18,7 +18,18 @@ const timelineContainerVariants = {
     },
 }
 
-function Timelines() {
+
+function parseTimelineItem(item) {
+
+    if (item.type === "article_item") return <ArticleItem key={item.id} to={`/articles/${item.article_slug}`} articleName={item.title} />
+    else if (item.type === "project_item") return <ProjectItem key={item.id} to={`/projects`} projectName={item.title} />
+    else if (item.type === "thought_item") return <ThoughtItem key={item.id}>{item.body}</ThoughtItem>
+
+    else throw new Error("Unhandled item type")
+}
+
+
+function Timelines({recentNotes, recentProjects, timeline}) {
 
     return(
         <>
@@ -33,39 +44,44 @@ function Timelines() {
                     viewport={{once: true}}
                 >
 
-                    {/* First Timeline of Timeline-1 Section */}
+                    {/* First Timeline of Timeline-1 Section - Only Dates*/}
                     <Timeline className="timeline-1" title="Recently Updated Notes">
-                        <DateItem to="#" time="2 hours ago">
-                            Sample text for timeline 1
-                        </DateItem>
-
-                        <DateItem to="#" time="yesterday">
-                            More sample text for timeline 1
-                        </DateItem>
-
-                        <DateItem to="#" time="6 days ago">
-                            Even more sample text for timeline 1
-                        </DateItem>
-
-                        <DateItem to="#" time="3 months ago">
-                            Even more sample text for <br/>timeline 1
-                        </DateItem>
-
-                        <DateItem to="#" time="2025 Jan 16">
-                            Even more sample text for timeline 1
-                        </DateItem>
-
+                        {
+                            recentNotes.map((article) =>
+                            {
+                                return (
+                                    <DateItem
+                                        to={`/articles/${article.article_slug}`}
+                                        time={article.date_created}
+                                        key={article.id}
+                                    >
+                                        {article.title}
+                                    </DateItem>
+                                )
+                            })
+                        }
                     </Timeline>
 
                     <ReadMore to={"/journal"}/>
 
                     <hr/>
 
-                    {/* Second Timeline of Timeline-1 Section */}
+                    {/* Second Timeline of Timeline-1 Section - Only Date Items*/}
                     <Timeline className="timeline-1" title="Recently Updated Projects">
-                        <DateItem to="#" time="2 hours ago">
-                            Sample text for timeline 2
-                        </DateItem>
+
+                        {
+                            recentProjects.map((project) => {
+                                return (
+                                    <DateItem
+                                        to={`/projects`}
+                                        time={project.date_created}
+                                        key={project.id}
+                                    >
+                                        {project.title}
+                                    </DateItem>
+                                )
+                            })
+                        }
                     </Timeline>
 
                     <ReadMore to={"/projects"}/>
@@ -80,39 +96,11 @@ function Timelines() {
                     viewport={{once: true}}
                 >
                     <Timeline title="Recent Updates" className="timeline-2__timeline">
-
-                        <Items.LikeItem to="#" articleName="Article Name here!"/>
-
-                        <Items.ThoughtItem>
-                            Have you ever wondered what happens when you sleep?
-                        </Items.ThoughtItem>
-
-                        <Items.ArticleItem to="#" articleName="Article Name here!"/>
-
-                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
-
-                        {/* Some Filler to test for scrollability */}
-                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
-                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
-                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
-                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
-                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
-                        <Items.ProjectItem to="#" projectName="Projects Name here!"/>
-
-                        <Items.ThoughtItem>
-                            Have you ever wondered what happens when you sleep?
-                        </Items.ThoughtItem>
-
-                        {/* For testing multi-line thoughts */}
-                        <Items.ThoughtItem>
-                            Have you ever wondered what happens when you sleep?<br/><br/><br/><br/><br/><br/><br/>
-                            Sometimes, truthfully, I don't know what I'm doing.
-                        </Items.ThoughtItem>
-
-                        <Items.CommentItem>
-                            This place looks pretty nice, I wonder what it is?
-                        </Items.CommentItem>
-
+                        {
+                            timeline.map((item) =>{
+                                return parseTimelineItem(item)
+                            })
+                        }
                     </Timeline>
                 </motion.div>
             </motion.section>
