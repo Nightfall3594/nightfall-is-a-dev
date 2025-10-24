@@ -2,7 +2,6 @@ import './thoughts.css'
 import ThoughtItem from "./thought-item.jsx";
 import {motion} from "framer-motion";
 import LoadingScreen from "../../common/loading-screen/loading-screen.jsx";
-import thoughts from "../../common/icons/thoughts.jsx";
 import {useThoughts} from "../../../hooks/useThoughts.js";
 
 const parentVariants = {
