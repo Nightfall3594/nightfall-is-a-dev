@@ -1,7 +1,6 @@
 import './projects.css'
 import ProjectItem from "./project-item.jsx";
 import {motion} from "framer-motion";
-import {useEffect, useState} from "react";
 import useProjects from "../../../hooks/useProjects.js";
 import LoadingScreen from "../../common/loading-screen/loading-screen.jsx";
 
