@@ -7,6 +7,8 @@ import {motion} from "framer-motion";
 import ReadMore from "./read-more.jsx";
 import {ArticleItem, ProjectItem, ThoughtItem} from "./index.js";
 
+import fromNow from "../../../../utils/fromNow.js";
+
 const timelineContainerVariants = {
     initial: {opacity: 0, y: "20%"},
     animate: {
@@ -52,7 +54,7 @@ function Timelines({recentNotes, recentProjects, timeline}) {
                                 return (
                                     <DateItem
                                         to={`/articles/${article.article_slug}`}
-                                        time={article.date_created}
+                                        time={fromNow(article.date_created)}
                                         key={article.id}
                                     >
                                         {article.title}
@@ -74,7 +76,7 @@ function Timelines({recentNotes, recentProjects, timeline}) {
                                 return (
                                     <DateItem
                                         to={`/projects`}
-                                        time={project.date_created}
+                                        time={fromNow(project.date_created)}
                                         key={project.id}
                                     >
                                         {project.title}

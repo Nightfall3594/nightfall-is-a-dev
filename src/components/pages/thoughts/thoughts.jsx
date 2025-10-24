@@ -3,6 +3,7 @@ import ThoughtItem from "./thought-item.jsx";
 import {motion} from "framer-motion";
 import LoadingScreen from "../../common/loading-screen/loading-screen.jsx";
 import {useThoughts} from "../../../hooks/useThoughts.js";
+import fromNow from "../../../utils/fromNow.js";
 
 const parentVariants = {
     initial: {
@@ -67,9 +68,10 @@ export default function Thoughts(){
                     thoughts.map(thought => {
                         return <ThoughtItem
                             text={thought.body}
-                            date={new Date(thought.date_created).toLocaleDateString('en-CA')}
+                            date={fromNow(thought.date_created)}
                             key={thought.id}
-                        />})
+                        />
+                    })
                 }
             </motion.div>
         </motion.section>

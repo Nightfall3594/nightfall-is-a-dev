@@ -1,12 +1,13 @@
 import './articles.css'
 import ArrowUp from "../../common/icons/arrow-up.jsx";
 import FloatingButton from "../../common/buttons/floating-button.jsx";
-import {AnimatePresence, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import ArticleLink from "./article-item.jsx";
 import FloatingButtonContainer from "../../common/buttons/floating-button-container.jsx";
 import {useScroll} from "../../../hooks/useScroll.js";
 import useArticleList from "../../../hooks/useArticleList.js";
 import LoadingScreen from "../../common/loading-screen/loading-screen.jsx";
+import fromNow from "../../../utils/fromNow.js";
 
 const sectionVariants = {
     initial: {},
@@ -64,8 +65,6 @@ export default function Articles() {
             <motion.div
                 className="articles__list"
                 variants={articleListVariants}
-                // key={articles.length}
-
             >
                 {
                     articles.map((article) => {
@@ -73,7 +72,7 @@ export default function Articles() {
                             to={`/journal/` + article.article_slug}
                             text={article.title}
                             key={article.id}
-                            date={new Date(article.date_created).toLocaleDateString('en-CA')}
+                            date={fromNow(article.date_created)}
                             variants={childVariants}
                             />
                     })
