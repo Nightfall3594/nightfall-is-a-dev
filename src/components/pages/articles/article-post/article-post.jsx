@@ -3,7 +3,7 @@ import './sidebar/sidebar.css'
 
 import ArticlePostHeader from "./article-post-header.jsx";
 import ArticleBody from "./article-body.jsx";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {SidebarContext} from "./sidebar/SidebarContext.js";
 
 import dedent from "dedent";
@@ -13,6 +13,7 @@ import FloatingButton from "../../../common/buttons/floating-button.jsx";
 import Hamburger from "../../../common/icons/hamburger.jsx";
 import ArrowUp from "../../../common/icons/arrow-up.jsx";
 import {useScroll} from "../../../../hooks/useScroll.js";
+import useResponsive from "../../../../hooks/useResponsive.js";
 
 const PLACEHOLDER_TEXT = `
                     # Lorem Ipsum Example
@@ -76,21 +77,9 @@ export default function ArticlePost() {
     // For handling whether the scroll-to-top button will appear (on mobile)
     const hasScrolled = useScroll()
 
-
-    // TODO: Refactor into hook
-    // For responsive behavior
-    const [isMobile, setMobile] = useState(window.innerWidth <= 768);
-    const handleResize = () => {
-        setMobile(window.innerWidth <= 768);
-        if (!isMobile) {
-            setMobileSidebarVisible(false);
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        return () => {window.removeEventListener('resize', handleResize);}
-    })
+    let isMobile = useResponsive((stillMobile) => {
+        if (!stillMobile) setMobileSidebarVisible(false);
+    });
 
 
     const [isMobileSidebarVisible, setMobileSidebarVisible] = useState(false);
