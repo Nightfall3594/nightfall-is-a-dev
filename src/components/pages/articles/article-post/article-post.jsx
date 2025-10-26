@@ -3,7 +3,8 @@ import './sidebar/sidebar.css'
 
 import ArticlePostHeader from "./article-post-header.jsx";
 import ArticleBody from "./article-body.jsx";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 import {SidebarContext} from "./sidebar/SidebarContext.js";
 
 import dedent from "dedent";
@@ -14,75 +15,36 @@ import Hamburger from "../../../common/icons/hamburger.jsx";
 import ArrowUp from "../../../common/icons/arrow-up.jsx";
 import {useScroll} from "../../../../hooks/useScroll.js";
 import useResponsive from "../../../../hooks/useResponsive.js";
+import useArticle from "../../../../hooks/useArticle.js";
+import LoadingScreen from "../../../common/loading-screen/loading-screen.jsx";
 
-const PLACEHOLDER_TEXT = `
-                    # Lorem Ipsum Example
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet urna at arcu vestibulum lacinia. Curabitur quis eros id sapien euismod sodales. Integer et magna nec magna maximus sodales. Vivamus sit amet erat fringilla, maximus ante sed, tempor tortor.
-
-                    ## Subheading 1
-
-                    Donec eget nulla at felis vehicula interdum. Etiam a interdum mi, ac interdum est. Nulla facilisi. Sed tempor euismod mauris id suscipit.
-
-                    ### Subheading 2
-
-                    - Lorem ipsum dolor sit amet
-                    - Consectetur adipiscing elit
-                    - Sed sit amet urna at arcu
-
-                    # Lorem Ipsum Example 2
-
-                    **Bold text** and *italic text*.
-
-                    ![catto](https://i.pinimg.com/736x/7e/b5/da/7eb5da94d67db82034648f5ced716ee3.jpg)
-                    
-                    # Lorem Ipsum Example 3
-
-                    > "Aenean eget tincidunt erat."
-
-                    ### Subheading 3
-
-                    1. First item
-                    2. Second item
-                    3. Third item
-                    
-                    # Lorem Ipsum Example 4
-
-                    Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Fusce feugiat arcu ac orci tincidunt, et fermentum leo sodales. Sed sed nunc eget mi blandit vestibulum sit amet in nunc.
-                    
-                    
-                    # Lorem Ipsum Example 5
-                    `
 
 export default function ArticlePost() {
 
-    // Commented out for now, but left as a footnote for future integration
-    // const {articleID} = useParams();
-    //
-    // const [content, setContent] = useState(null);
+    const {article_slug} = useParams();
+    let {article, isLoading} = useArticle(article_slug);
 
-    // Get all chapter ids, in array format
     const [chapters, setChapters] = useState([]);
-
-
     useEffect(() => {
-        setChapters(
-            dedent(PLACEHOLDER_TEXT)
-                .trim()
-                .match(/^#\s(.+)$/gm))
-    },[])
+        if (!isLoading) {
+            setChapters(
+                dedent(article.body)
+                    .trim()
+                    .match(/^#\s(.+)$/gm)
+            )
+        }
+    },[article])
 
 
     // For handling whether the scroll-to-top button will appear (on mobile)
     const hasScrolled = useScroll()
 
+    const [isMobileSidebarVisible, setMobileSidebarVisible] = useState(false);
     let isMobile = useResponsive((stillMobile) => {
         if (!stillMobile) setMobileSidebarVisible(false);
     });
 
-
-    const [isMobileSidebarVisible, setMobileSidebarVisible] = useState(false);
+    if (isLoading) return <LoadingScreen/>
 
 
     return (
@@ -96,9 +58,7 @@ export default function ArticlePost() {
                 />
 
                 <ArticleBody>
-                    {
-                        PLACEHOLDER_TEXT
-                    }
+                    {article.body}
                 </ArticleBody>
 
             </div>
