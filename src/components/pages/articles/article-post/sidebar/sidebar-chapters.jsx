@@ -5,6 +5,7 @@ export default function SidebarChapters({chapters, variants}){
 
         <div className="sidebar__chapters">
             {
+                chapters &&
                 chapters.map((chapter) => {
                     chapter = chapter.replace(/#\s/,"");
                     let id = chapter.toLowerCase().trim().replace(/\s/g, "-");
