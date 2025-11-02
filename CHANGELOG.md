@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.6.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.5.0...v1.6.0) (2025-11-02)
+
+
+### Features
+
+* add date formatting relative to today ([3b42f12](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/3b42f12860efcbf9f79bdd463a573b002a9a8257))
+* add loading screen ([c82536d](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/c82536ddcab7e21a6b8959ab3c37394ccd9f2bf9))
+* **article-post:** link article-post to api ([70b0984](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/70b098421411d17d53ce9e309aa2ede4d3a13fd4))
+* **articles:** add linking to api ([8c722d7](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/8c722d705051a7b26b6ba35dd7baf9f5489bd182))
+* **home-page:** link home page to api ([aa6565c](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/aa6565cd3f124db1127e50edd0e7ec13a95545f3))
+* **projects:** add linking to api ([a8632bf](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/a8632bfae34bb79ba66b6ed9c30a61d517aaf80f))
+* **thoughts:** add linking to api ([4a302fa](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/4a302fa786a7c97a47f5c748944a7f5a6cfb1b2d))
+
+
+### Bug Fixes
+
+* **timelines:** duplicate key issue ([5b9bbef](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/5b9bbef1a328bb529ee739a8a1df9b4a08bd0f6d))
+
 ## [1.5.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.4.0...v1.5.0) (2025-10-05)
 
 
