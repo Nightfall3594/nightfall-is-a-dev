@@ -17,6 +17,7 @@ import {useScroll} from "../../../../hooks/useScroll.js";
 import useResponsive from "../../../../hooks/useResponsive.js";
 import useArticle from "../../../../hooks/useArticle.js";
 import LoadingScreen from "../../../common/loading-screen/loading-screen.jsx";
+import fromNow from "../../../../utils/fromNow.js";
 
 
 export default function ArticlePost() {
@@ -33,7 +34,7 @@ export default function ArticlePost() {
                     .match(/^#\s(.+)$/gm)
             )
         }
-    },[article])
+    },[article, isLoading]);
 
 
     // For handling whether the scroll-to-top button will appear (on mobile)
@@ -52,8 +53,8 @@ export default function ArticlePost() {
             <div className='article-post__content'>
 
                 <ArticlePostHeader
-                    title="My thoughts on making a website..."
-                    date="Jan 16, 2025"
+                    title={article.title}
+                    date={fromNow(article.date)}
                     author="Nightfall3594"
                 />
 
@@ -84,5 +85,4 @@ export default function ArticlePost() {
             }
 
         </section>
-    )
-}
+    )}
