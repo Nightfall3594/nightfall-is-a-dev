@@ -84,8 +84,9 @@ function NavBar() {
                 </NavLinks>
             </NavContext.Provider>
 
-            <NavButton Icon={Icons.Mail} className="navbar__icon" onClick={() => {}} />
-
+            <a href="mailto:nightfall3594@gmail.com">
+                <NavButton Icon={Icons.Mail} className="navbar__icon" onClick={() => {}} />
+            </a>
             <NavbarBackdrop isVisible={isFrosted}/>
 
         </motion.header>

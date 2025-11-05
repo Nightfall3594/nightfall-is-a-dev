@@ -103,6 +103,7 @@ due to backdrop filter interfering with the mobile navlink's positioning
 .navbar__icon {
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .navbar__icon svg {
