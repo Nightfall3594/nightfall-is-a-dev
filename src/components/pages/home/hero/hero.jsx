@@ -45,9 +45,9 @@ function Hero() {
                         className="hero__links"
                         variants={heroLinkContainerVariants}
                     >
-                        <HeroLink Icon={Github} className="github-icon" to="#"/>
-                        <HeroLink Icon={Mail} className="mail-icon" to="#"/>
-                        <HeroLink Icon={Discord} className="discord-icon" to="#"/>
+                        <HeroLink Icon={Github} className="github-icon" to="https://github.com/Nightfall3594"/>
+                        <HeroLink Icon={Mail} className="mail-icon" to="mailto:nightfall3594@gmail.com"/>
+                        <HeroLink Icon={Discord} className="discord-icon" to="https://discord.com/users/335641970170920960"/>
                     </motion.div>
 
                 </motion.div>
