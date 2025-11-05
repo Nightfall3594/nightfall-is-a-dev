@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {API_URL} from "../config/constants.js"
 
 export default function useArticleList() {
 
@@ -6,7 +7,7 @@ export default function useArticleList() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:8181/articles/")
+        fetch(`${API_URL}/articles/`)
             .then(res => res.json())
             .then(({articles}) => {
                 setArticles(articles)

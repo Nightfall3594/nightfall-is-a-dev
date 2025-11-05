@@ -1,10 +1,11 @@
 import React, {useEffect} from "react";
+import {API_URL} from "../config/constants.js"
 
 export default function useHomePageData(){
 
     const [recentNotes, setRecentNotes] = React.useState([]);
     useEffect(() => {
-        fetch('http://localhost:8181/articles')
+        fetch(`${API_URL}/articles`)
             .then(response => response.json())
             .then(data => {
                 setRecentNotes(data.articles);
@@ -14,7 +15,7 @@ export default function useHomePageData(){
 
     const [recentProjects, setRecentProjects] = React.useState([]);
     useEffect(() => {
-        fetch('http://localhost:8181/projects')
+        fetch(`${API_URL}/projects`)
             .then(response => response.json())
             .then(data => {
                 setRecentProjects(data.projects);
@@ -24,7 +25,7 @@ export default function useHomePageData(){
 
     const [timeline, setTimeline] = React.useState([]);
     useEffect(() => {
-        fetch('http://localhost:8181/timeline')
+        fetch(`${API_URL}/timeline`)
             .then(response => response.json())
             .then(data => {
                 setTimeline(data.items);

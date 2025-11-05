@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {API_URL} from "../config/constants.js"
 
 export default function useProjects() {
 
@@ -7,7 +8,7 @@ export default function useProjects() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:8181/projects")
+        fetch(`${API_URL}/projects`)
             .then(res => res.json())
             .then(({projects}) => {
                 setProjects(projects)

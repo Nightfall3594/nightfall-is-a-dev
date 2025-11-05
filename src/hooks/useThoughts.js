@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {API_URL} from "../config/constants.js"
 
 export function useThoughts() {
 
@@ -6,7 +7,7 @@ export function useThoughts() {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:8181/thoughts')
+        fetch(`${API_URL}/thoughts`)
             .then(res => res.json())
             .then(({thoughts}) => {
                 setThoughts(thoughts)
