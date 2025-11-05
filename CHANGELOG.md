@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.7.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.6.0...v1.7.0) (2025-11-05)
+
+
+### Features
+
+* add site icon and title ([2deb753](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/2deb7533b4f4f48e2151ba92e29fdd39b65a8f1b))
+* link hero and footer links to proper contacts ([26523ea](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/26523ea7c8283d076c98081dddaf19c008ce8f83))
+* make mail icon link to email and make cursor pointer on hover ([ec835a7](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/ec835a7addabb322ebc518f0dcab81bad7e8dcc0))
+
+
+### Bug Fixes
+
+* fix title and date update issue ([4f1ef0e](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/4f1ef0e9128bfe92be16e803ea584e33a8f51f69))
+
 ## [1.6.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.5.0...v1.6.0) (2025-11-02)
 
 
