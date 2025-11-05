@@ -10,7 +10,7 @@
     font-size: 22px;
     font-family: 'Montserrat', sans-serif;
     color: var(--text);
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .bottom-nav__list{
@@ -20,6 +20,7 @@
     justify-content: center;
     align-items: center;
     padding: 0.5rem 0;
+    margin-bottom: 4rem;
 }
 
 .bottom-nav__list li {
@@ -83,92 +84,6 @@
     background-color: var(--comment-color);
 }
 
-/* Bottom Nav Leave a message subsection */
-.bottom-nav__leave-message {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    width: 70%;
-    border-radius: 25px;
-
-    position: fixed;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    z-index: 102;
-
-    max-width: 500px;
-    box-shadow: 0 0 10px 0 var(--border);
-
-    background-color: rgba(20, 20, 30, 0.2);
-    backdrop-filter: blur(10px);
-
-    border: 1px solid var(--border);
-}
-
-.bottom-nav-title__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-
-}
-
-.bottom-nav-message__title {
-    font-size: 20px;
-}
-
-.bottom-nav-close__icon {
-    color: var(--text);
-}
-
-.bottom-nav__leave-message hr {
-    border-top: 1px solid var(--border);
-}
-
-.bottom-nav-message__close {
-    border: none;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.bottom-nav-message__pretext {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: var(--muted-text);
-    margin: 0.5rem 0;
-}
-
-.bottom-nav__leave-message form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 100%;
-}
-
-.bottom-nav__leave-message textarea {
-    width: calc(100% - 2rem);
-    height: 200px;
-    background-color: var(--lighter-bg);
-    padding: 1rem;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text);
-    resize: none;
-}
-
-.bottom-nav-message__send {
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary);
-    color: var(--bg);
-    margin-top: 1rem;
-}
 
 @media (min-width: 768px) {
     .bottom-nav__list {

@@ -2,9 +2,6 @@ import './bottom-nav.css'
 
 import * as Icons from "/src/components/common/icons/index.js";
 import {default as BottomNavItem} from "./bottom-nav-item.jsx"
-import IconButton from "./icon-button.jsx";
-import CommentBox from "./comment-box.jsx"
-import {useState} from "react";
 
 import {motion} from "framer-motion";
 
@@ -29,19 +26,8 @@ const h1Variants = {
     }
 }
 
-const buttonListVariants= {
-    initial: {},
-    animate: {
-        transition: {
-            staggerChildren: 0.2
-        }
-    }
-}
-
 
 function BottomNav({className=""}) {
-
-    const [isCommentBoxVisible, setCommentBoxVisible] = useState(false);
 
     return (
         <section className={"bottom-nav " + className}>
@@ -87,29 +73,6 @@ function BottomNav({className=""}) {
                     text="About the site"
                 />
             </motion.ul>
-
-            <motion.div
-                className="bottom-nav__buttons"
-                variants={buttonListVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{once: true}}
-            >
-                <IconButton
-                    className="bottom-nav__like"
-                    Icon={Icons.HeartFilled}
-                    text="Like this page"
-                />
-
-                <IconButton
-                    className="bottom-nav__comment"
-                    Icon={Icons.MessageFilled}
-                    onClick={() =>{setCommentBoxVisible(true)}}
-                    text="Leave a message"
-                />
-            </motion.div>
-
-            <CommentBox isVisible={isCommentBoxVisible} onClose={() => setCommentBoxVisible(false)} />
         </section>
     )
 }
