@@ -12,7 +12,7 @@ export default function useArticle(article_slug){
                 setArticle(data);
                 setLoading(false);
             })
-    },[])
+    },[article_slug])
 
     return {article, isLoading}
 
