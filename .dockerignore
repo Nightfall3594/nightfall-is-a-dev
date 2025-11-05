@@ -1,0 +1,9 @@
+.github
+.idea
+.env.example
+eslint.config.js
+dist
+node_modules
+bin
+release-please-config.json
+CHANGELOG.md
