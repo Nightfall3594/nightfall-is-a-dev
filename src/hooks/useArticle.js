@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {API_URL} from "../config/constants.js";
 
 export default function useArticle(article_slug){
 
@@ -6,7 +7,7 @@ export default function useArticle(article_slug){
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:8181/articles/${article_slug}`)
+        fetch(`${API_URL}/articles/${article_slug}`)
             .then(res => res.json())
             .then(data => {
                 setArticle(data);
