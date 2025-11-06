@@ -1,5 +1,6 @@
 
 .article-post {
+    min-height: 76vh;
 }
 
 .article-post__content {

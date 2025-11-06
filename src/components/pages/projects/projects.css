@@ -1,7 +1,7 @@
 
 .projects {
     margin: 5% 10%;
-    min-height: 57vh;
+    min-height: 76vh;
 }
 
 .projects__header {
@@ -30,12 +30,18 @@
 
 @media (min-width: 768px) {
 
+    .projects {
+        margin-bottom: 0;
+        min-height: 67vh;
+    }
+
     .projects__header {
         width: 80%;
     }
 
     .projects__list {
         width: 80%;
+        margin: 0 auto;
         justify-items: start;
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
