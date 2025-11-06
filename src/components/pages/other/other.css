@@ -1,7 +1,7 @@
 
 .other {
     min-width: 80%;
-    min-height: 100vh;
+    min-height: 76vh;
     margin: 5% 10%;
 }
 
@@ -38,7 +38,7 @@
 
     .other{
         min-width: 60%;
-        margin: 5% 20%;
+        margin: 5% 20% 0;
     }
 
     .about__content {
