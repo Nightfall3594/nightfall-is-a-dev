@@ -44,42 +44,20 @@ export default function Other() {
 
             <motion.div className={"about__content"}>
                 <motion.p variants={childVariants}>
-                    Welcome to my webpage! This is my little corner of the internet, where I share projects, thoughts, ideas, and many other random stuff.
+                    Hello, this is my page, where I'll mostly be uploading my projects, random thoughts, and stories on the things I build or encounter. I've always wanted to build quite a CMS, and if there'd be a place where I'd like to share them, it's most likely going to be here.
                 </motion.p>
 
                 <motion.p variants={childVariants}>
-                    This project originally began as a recreation of an existing design of a similar blog site, so this design isn't fully mine,
-                    however, the process provided me with a great refresher on html and css, and over time,
+                    The overall design of the website isn't mine, it's actually heavily inspired by the design of an open source project (MixSpace). I really liked the informal, friendly and casual design, and while I actually would like to deploy a similar one, sadly the project is written in chinese so I can't quite use it. On that note, I decided I'll just build it myself, from scratch.
                 </motion.p>
 
                 <motion.p variants={childVariants}>
-                    In the process, I learned a lot about designing and developing web frontends. It taught me naming conventions, file structures,
-                    and plenty of the quirks this weird little thing called Javascript. I also learned about responsive design, and many other web-development concepts, such as object destructuring, component-driven-design, constants, and many, many more.
-                    So while the website is just a recreation of an existing design, in the process of reverse-engineering, debugging,
-                    and analyzing components, I learned a lot, I grew from it, and most importantly, I gained valuable knowledge of which will be useful when newer, more complex projects come later down the line.
+                    It took quite a while, but it's done. So if you want to take a look around a random person's thoughts, projects, and random scribbly storytimes, you've come to the right place.
                 </motion.p>
 
                 <motion.p variants={childVariants}>
-                    So, what's going to happen to the website?
+                    Feel free to look around, read a little, and just chime in. I'll most likely be dropping new things here every once in a while.
                 </motion.p>
-
-                <motion.p variants={childVariants}>
-                    Personally, I think I'll hold on to it for a while longer. I'll maintain it, share my stories, write random things, and while it isn't anything quite substantial yet,
-                    I'd like for this website to be my tiny little space in the internet, for a while. Where I will share my thoughts, my day-to-day stories, projects and journey towards growing and improving constantly as a software developer.
-                </motion.p>
-
-                <motion.p variants={childVariants}>
-                    So, if you will chime in, read a little, and browse,
-                </motion.p>
-
-                <motion.p variants={childVariants}>
-                    Welcome to my personal corner of the internet!
-                </motion.p>
-
-                <motion.p variants={childVariants}>
-                    Enjoy your stay :)
-                </motion.p>
-
 
             </motion.div>
         </motion.section>
