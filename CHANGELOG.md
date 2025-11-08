@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.1](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.0...v1.7.1) (2025-11-08)
+
+
+### Bug Fixes
+
+* fix timeline items not linking to article issue ([21ef372](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/21ef3727e4ea31070c9de55bc1267f7702e27724))
+* minor footer spacing issue ([8aef76e](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/8aef76e272ea4b1d32097ab50d9377d1eac8f075))
+
 ## [1.7.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.6.0...v1.7.0) (2025-11-05)
 
 
