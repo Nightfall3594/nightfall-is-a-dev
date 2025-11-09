@@ -54,7 +54,7 @@ export default function ArticlePost() {
 
                 <ArticlePostHeader
                     title={article.title}
-                    date={fromNow(article.date)}
+                    date={fromNow(article.date_created)}
                     author="Nightfall3594"
                 />
 
