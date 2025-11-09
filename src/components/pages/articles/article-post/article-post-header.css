@@ -18,8 +18,9 @@
 
 .subtitle__author {
     color: var(--muted-text);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: Montserrat, sans-serif;
+    text-wrap: nowrap;
 }
 
 .subtitle-date__container {
@@ -29,13 +30,31 @@
 }
 
 .subtitle-date__clock-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 0.9rem;
+    height: 0.9rem;
     color: var(--muted-text);
     margin-right: 0.5rem;
 }
 
 .subtitle__date {
+    font-size: 0.9rem;
     color: var(--muted-text);
     font-family: Montserrat, sans-serif;
+    text-wrap: nowrap;
+}
+
+@media (min-width: 768px) {
+
+    .subtitle__author{
+        font-size: 1rem;
+    }
+
+    .subtitle-date__clock-icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .subtitle__date {
+        font-size: 1rem;
+    }
 }
