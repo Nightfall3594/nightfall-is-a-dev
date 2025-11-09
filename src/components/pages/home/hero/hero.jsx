@@ -37,8 +37,8 @@ function Hero() {
                     initial="initial"
                     animate="animate"
                 >
-                    <HeroText>Hi! I'm Nightfall 👋</HeroText>
-                    <HeroText>I'm a <span>&lt;Python Developer/&gt;</span></HeroText>
+                    <HeroText><span>Hi! I'm Nightfall 👋</span></HeroText>
+                    <HeroText>I'm a <span className={"hero__highlight"}>&lt;Python Developer/&gt;</span></HeroText>
                     <MutedHeroText>I like to code because I like building stuff</MutedHeroText>
 
                     <motion.div
