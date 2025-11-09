@@ -40,9 +40,12 @@ function spanChars(children) {
         }
 
         else {
-            return spanChars(child.props.children)
+                return React.cloneElement(child, {
+                    children: spanChars(child.props.children)
+                });
+            }
         }
-    })
+    )
 }
 
 function HeroText({children}) {

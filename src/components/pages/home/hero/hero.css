@@ -32,16 +32,20 @@
 .hero__text {
     font-weight: normal;
     text-align: center;
-    text-wrap: nowrap;
-    font-family: Montserrat, sans-serif;
+    font-family: "JetBrains Mono", sans-serif;
     font-size: 30px;
     padding: 0.5rem 0;
 }
 
 .hero__text span {
     font-size: 25px;
+    display: inline-flex;
+}
+
+.hero__highlight {
+    display: inline-block;
+    white-space: nowrap;
     text-wrap: nowrap;
-    font-family: "JetBrains Mono", sans-serif;
 }
 
 .hero__text-container .hero__text--muted {
