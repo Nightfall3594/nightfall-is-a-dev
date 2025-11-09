@@ -18,7 +18,6 @@ import {useEffect} from "react";
 // Scroll to top on route change.
 function ScrollToTop() {
     const { pathname } = useLocation();
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
@@ -27,6 +26,13 @@ function ScrollToTop() {
 }
 
 function App() {
+
+    // Note: important for forcing scroll to top on route change
+    useEffect(() => {
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+    }, [])
 
   return (
     <>
