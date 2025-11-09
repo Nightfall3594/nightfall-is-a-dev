@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.2](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.1...v1.7.2) (2025-11-09)
+
+
+### Bug Fixes
+
+* **article-post:** unintended text wrapping due to oversized fonts on mobile ([1ce584e](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/1ce584e711b8c4c09172192fac15d9ba4bdcca7c))
+* fix inaccurate date error on article post page ([b07712f](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/b07712f8279a21ac16f69cd48adb98c08adeb990))
+* fix issue on hero text clipping the sides on small screens ([1bfbb84](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/1bfbb8420b2d6d8f0f424b820c8a81b4641174d9))
+* fix swapped link issue in footer ([e6b9281](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/e6b92812a9cb77a314a9e03ba749eab8382d4057))
+* spacing issue for articles and thoughts ([0adf40f](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/0adf40f22b846063b920942a781efdfe4dbb6e13))
+* window not scrolling to top when using back buttons to navigate ([ec34999](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/ec34999f1259d68e1ef6cc45ff133277d5ce349d))
+
 ## [1.7.1](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.0...v1.7.1) (2025-11-08)
 
 
