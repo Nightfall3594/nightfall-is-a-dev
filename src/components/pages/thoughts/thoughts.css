@@ -1,6 +1,7 @@
 
 .thoughts {
     margin: 5%;
+    min-height: 76vh;
 }
 
 .thoughts-title__container {
