@@ -4,9 +4,7 @@
 }
 
 .article-post__content {
-    margin: 1rem;
-    padding: 10%;
-
+    margin: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
