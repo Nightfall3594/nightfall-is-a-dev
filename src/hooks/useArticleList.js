@@ -10,7 +10,7 @@ export default function useArticleList() {
         fetch(`${API_URL}/articles/`)
             .then(res => res.json())
             .then(({articles}) => {
-                setArticles(articles)
+                setArticles(articles.reverse())
                 setIsLoading(false)
             })
             .catch(err => alert(err))
