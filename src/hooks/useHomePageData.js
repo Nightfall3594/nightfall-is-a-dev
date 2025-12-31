@@ -8,7 +8,7 @@ export default function useHomePageData(){
         fetch(`${API_URL}/articles`)
             .then(response => response.json())
             .then(data => {
-                setRecentNotes(data.articles);
+                setRecentNotes(data.articles.reverse());
             })
     },[])
 
@@ -18,7 +18,7 @@ export default function useHomePageData(){
         fetch(`${API_URL}/projects`)
             .then(response => response.json())
             .then(data => {
-                setRecentProjects(data.projects);
+                setRecentProjects(data.projects.reverse());
             })
     }, []);
 
@@ -28,7 +28,7 @@ export default function useHomePageData(){
         fetch(`${API_URL}/timeline`)
             .then(response => response.json())
             .then(data => {
-                setTimeline(data.items);
+                setTimeline(data.items.reverse());
             })
     }, []);
 
