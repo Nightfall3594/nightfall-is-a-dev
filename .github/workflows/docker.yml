@@ -4,12 +4,17 @@ on:
     branches:
       - "main"
 
+  workflow_dispatch:
+
 jobs:
   push-to-docker-hub:
     runs-on: ubuntu-latest
     steps:
+      - name: "checkout repo"
+        uses: actions/checkout@v3
+
       - name: "dockerize the app"
-        run: docker build -t nightfall-is-a-dev:latest --build-arg VITE_API_URL=${{ vars.VITE_API_URL }}
+        run: docker build -t nightfall-is-a-dev:latest --build-arg VITE_API_URL=${{ vars.VITE_API_URL }} .
 
       - name: "tag the image"
         run: docker tag nightfall-is-a-dev:latest nightfall3594/nightfall-is-a-dev:latest
