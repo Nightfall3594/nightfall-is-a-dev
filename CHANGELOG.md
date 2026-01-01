@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.2...v1.7.3) (2026-01-01)
+
+
+### Bug Fixes
+
+* **timeline:** reverse timeline order ([e73263c](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/e73263c4cf02336fe4a8856223d976085a8f40a4))
+
 ## [1.7.2](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.1...v1.7.2) (2025-11-09)
 
 
