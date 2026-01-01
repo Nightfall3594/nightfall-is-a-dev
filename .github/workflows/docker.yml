@@ -12,12 +12,22 @@ jobs:
     steps:
       - name: "checkout repo"
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          fetch-tags: true
 
       - name: "dockerize the app"
         run: docker build -t nightfall-is-a-dev:latest --build-arg VITE_API_URL=${{ vars.VITE_API_URL }} .
 
+      - name: "get the version"
+        id: version
+        run: |
+          echo "version=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
+
       - name: "tag the image"
-        run: docker tag nightfall-is-a-dev:latest nightfall3594/nightfall-is-a-dev:latest
+        run: |
+          docker tag nightfall-is-a-dev:latest \
+          nightfall3594/nightfall-is-a-dev:${{ steps.version.outputs.version }}-${{ github.sha }}
 
       - name: "login to docker"
         run: |
@@ -26,4 +36,6 @@ jobs:
             --password-stdin
 
       - name: "push the image"
-        run: docker push nightfall3594/nightfall-is-a-dev:latest
+        run: |
+          docker push \
+          nightfall3594/nightfall-is-a-dev:${{ steps.version.outputs.version }}-${{ github.sha }}
