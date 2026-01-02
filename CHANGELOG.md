@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.5](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.4...v1.7.5) (2026-01-02)
+
+
+### Bug Fixes
+
+* fix article list fetch issue (for real this time) ([96fdb91](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/96fdb91fbc2a06eeddb85581bd54a9e676089b6a))
+
 ## [1.7.4](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.3...v1.7.4) (2026-01-02)
 
 
