@@ -7,7 +7,7 @@ export default function useArticleList() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`${API_URL}/article/`)
+        fetch(`${API_URL}/articles`)
             .then(res => res.json())
             .then(({articles}) => {
                 setArticles(articles.reverse())
