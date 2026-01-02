@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.4](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.3...v1.7.4) (2026-01-02)
+
+
+### Bug Fixes
+
+* fix article type error when fetching article list ([4c7926e](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/4c7926e1ac0247452c9da69180fbdb4f8c6a1b4c))
+
+
+### Performance Improvements
+
+* add lazy loading to page components ([d6c1330](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/d6c1330a5d984f60a08020c9794bf09a315683e0))
+* remove unused page font imports ([8544981](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/85449811d8ecab01cb3d00c43e17172f3b66b25e))
+
 ## [1.7.3](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.2...v1.7.3) (2026-01-01)
 
 
