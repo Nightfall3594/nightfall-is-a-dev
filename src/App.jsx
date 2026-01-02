@@ -4,16 +4,17 @@ import './styles/utilities.css'
 
 import Navbar from "./components/common/navbar/navbar.jsx";
 import Footer from "./components/common/footer/footer.jsx"
-import Home from "./components/pages/home/home.jsx";
-import Articles from "./components/pages/articles/articles.jsx";
-import ArticlePost from "./components/pages/articles/article-post/article-post.jsx";
-import Thoughts from "./components/pages/thoughts/thoughts.jsx";
-import Projects from "./components/pages/projects/projects.jsx";
-import Other from "./components/pages/other/other.jsx";
-
+import LoadingScreen from "./components/common/loading-screen/loading-screen.jsx";
 import {Routes, Route, useLocation} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, lazy, Suspense} from "react";
 
+// all lazy loaded components here
+const Home = lazy(() => import('./components/pages/home/home.jsx'));
+const Articles = lazy( () => import("./components/pages/articles/articles.jsx"));
+const ArticlePost = lazy( () => import("./components/pages/articles/article-post/article-post.jsx"));
+const Thoughts = lazy( () => import("./components/pages/thoughts/thoughts.jsx"));
+const Projects = lazy( () => import("./components/pages/projects/projects.jsx"));
+const Other = lazy( () => import("./components/pages/other/other.jsx"));
 
 // Scroll to top on route change.
 function ScrollToTop() {
@@ -41,14 +42,16 @@ function App() {
 
         <Navbar />
 
-        <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/journal" element={<Articles/>} />
-            <Route path="/journal/:article_slug" element={<ArticlePost/>} />
-            <Route path="/projects" element={<Projects/>} />
-            <Route path="/thoughts" element={<Thoughts/>} />
-            <Route path="/other" element={<Other/>} />
-        </Routes>
+        <Suspense fallback={<LoadingScreen/>}>
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/journal" element={<Articles/>} />
+                <Route path="/journal/:article_slug" element={<ArticlePost/>} />
+                <Route path="/projects" element={<Projects/>} />
+                <Route path="/thoughts" element={<Thoughts/>} />
+                <Route path="/other" element={<Other/>} />
+            </Routes>
+        </Suspense>
 
         <Footer />
     </>
