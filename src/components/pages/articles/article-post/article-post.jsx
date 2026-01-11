@@ -18,23 +18,24 @@ import useResponsive from "../../../../hooks/useResponsive.js";
 import useArticle from "../../../../hooks/useArticle.js";
 import LoadingScreen from "../../../common/loading-screen/loading-screen.jsx";
 import fromNow from "../../../../utils/fromNow.js";
+import CommonErrorPage from "../../error/common-error-page.jsx";
 
 
 export default function ArticlePost() {
 
     const {article_slug} = useParams();
-    let {article, isLoading} = useArticle(article_slug);
+    let {article, isLoading, error} = useArticle(article_slug);
 
     const [chapters, setChapters] = useState([]);
     useEffect(() => {
-        if (!isLoading) {
+        if (!isLoading && !error) {
             setChapters(
                 dedent(article.body)
                     .trim()
                     .match(/^#\s(.+)$/gm)
             )
         }
-    },[article, isLoading]);
+    },[article, isLoading, error]);
 
 
     // For handling whether the scroll-to-top button will appear (on mobile)
@@ -46,6 +47,7 @@ export default function ArticlePost() {
     });
 
     if (isLoading) return <LoadingScreen/>
+    if (error) return <CommonErrorPage message={error}/>
 
 
     return (
