@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.5...v1.8.0) (2026-01-11)
+
+
+### Features
+
+* **article-post:** add error handling page ([6242a4f](https://github.com/Nightfall3594/nightfall-is-a-dev/commit/6242a4fcd66a58a9274d30b9a60778325e150233))
+
 ## [1.7.5](https://github.com/Nightfall3594/nightfall-is-a-dev/compare/v1.7.4...v1.7.5) (2026-01-02)
 
 
